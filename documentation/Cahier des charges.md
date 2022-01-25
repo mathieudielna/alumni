@@ -1,22 +1,22 @@
 
 # Sommaire 
 
-[Cadrage & périmètre](#introduction) 
+- [Cadrage & périmètre](#introduction) 
 
-[Expression fonctionnelle du besoin](#paragraph1)
+- [Expression fonctionnelle du besoin](#paragraph1)
 
-[Méthodes et contraintes ](#paragraph2) 
+- [Méthodes et contraintes ](#paragraph2) 
 
-[Délais et parties prenantes ](#paragraph3) 
+- [Délais et parties prenantes ](#paragraph3) 
 
-[Outils](#paragraphe4)
+- [Outils](#paragraphe4)
 
-[Tests](#paragraphe5)
+- [Tests](#paragraphe5)
 
-[Patterns de programmation](#paragraphe6)
+- [Patterns de programmation](#paragraphe6)
 
-[Conclusion](#paragraphe7)
+- [Conclusion](#paragraphe7)
 
-[Bibliographie ](#paragraphe8)
+- [Bibliographie ](#paragraphe8)
   
 
