@@ -1,23 +1,29 @@
 package com.alumni.spring.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
+
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
 
-    @GetMapping("/")
+    @RequestMapping("/")
     public String home() {
         return("<h1>This is my home page!</h1>");
     }
 
-    @GetMapping("/user")
+    @RequestMapping("/user")
     public String normalUser() {
         return ("<h1>This is my normal user page!</h1>");
     }
 
-    @GetMapping("/admin")
+    @RequestMapping("/admin")
     public String adminUser() {
         return  ("<h1>This is my normal admin page!</h1>");
+    }
+
+    @RequestMapping("/anonymous")
+    public String anonymous() {
+        return  ("<h1>This is my anonymous page!</h1>");
     }
 }

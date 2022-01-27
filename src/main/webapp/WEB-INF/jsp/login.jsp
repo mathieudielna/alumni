@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Person List</title>
+    <title>Login Page</title>
     <%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>--%>
 </head>
 <body>
@@ -308,7 +308,7 @@
          </div>-->
 
         <!-- Login Form -->
-        <form name="f" th:action="@{/login}" method="post">
+        <form name="f" action="login" method="post">
 
             <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
 
