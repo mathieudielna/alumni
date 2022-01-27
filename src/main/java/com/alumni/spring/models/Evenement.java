@@ -6,7 +6,7 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "Evenement")
+@Table(name = "evenement")
 public class Evenement {
 
     @Id
@@ -17,23 +17,23 @@ public class Evenement {
     private Time heureEvent;
     private String lieuEvent;
     private int nbPersonne;
-    private Utilisateur idCreateur;
+//    private Utilisateur idCreateur;
 
     public Evenement(){
     }
 
-    public Evenement(int id, Date date, String nom, Time heure, String lieu, int nbPersonne, Utilisateur createur){
+    public Evenement(int id, Date date, String nom, Time heure, String lieu, int nbPersonne){
         this.idEvent = id;
         this.dateEvent = date;
         this.nomEvent = nom;
         this.heureEvent = heure;
         this.lieuEvent = lieu;
         this.nbPersonne = nbPersonne;
-        this.idCreateur = createur;
+        //this.idCreateur = createur;
     }
 
     // getter
-    public static long getIdEvent() {
+    public int getIdEvent() {
         return idEvent;
     }
 
@@ -57,9 +57,9 @@ public class Evenement {
         return nbPersonne;
     }
 
-    public Utilisateur getIdCreateur() {
+/*    public Utilisateur getIdCreateur() {
         return idCreateur;
-    }
+    }*/
 
     // setter
 
@@ -84,7 +84,7 @@ public class Evenement {
         this.nbPersonne = nbPersonne;
     }
 
-    public void setIdCreateur(Utilisateur idCreateur) {
+/*    public void setIdCreateur(Utilisateur idCreateur) {
         this.idCreateur = idCreateur;
-    }
+    }*/
 }

@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Utilisateur")
+@Table(name = "utilisateur")
 public class Utilisateur {
 
     @Id
@@ -32,7 +32,7 @@ public class Utilisateur {
     }
 
     //getter
-    public static long getId() {
+    public int getId() {
         return id;
     }
 
