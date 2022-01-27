@@ -1,5 +1,11 @@
+<!DOCTYPE HTML>
 <html>
-
+<head>
+    <meta charset="UTF-8" />
+    <title>Person List</title>
+    <%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>--%>
+</head>
+<body>
 <style>
 
     @import url('https://fonts.googleapis.com/css?family=Poppins');
@@ -294,12 +300,12 @@
         <!-- Tabs Titles -->
         <h2 class="active"> Connexion </h2>
 
-<!--        <h2 class="inactive underlineHover">Sign Up </h2>-->
+        <!--        <h2 class="inactive underlineHover">Sign Up </h2>-->
 
         <!-- Icon -->
-       <!-- <div class="fadeIn first">
-            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon"/>
-        </div>-->
+        <!-- <div class="fadeIn first">
+             <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon"/>
+         </div>-->
 
         <!-- Login Form -->
         <form name="f" th:action="@{/login}" method="post">
@@ -322,11 +328,12 @@
         </form>
 
         <!-- Remind Passowrd -->
-<!--        <div id="formFooter">-->
-<!--            <a class="underlineHover" href="#">Forgot Password?</a>-->
-<!--        </div>-->
+        <!--        <div id="formFooter">-->
+        <!--            <a class="underlineHover" href="#">Forgot Password?</a>-->
+        <!--        </div>-->
 
     </div>
 </div>
+</body>
 
 </html>
