@@ -17,19 +17,22 @@ public class Evenement {
     private Time heureEvent;
     private String lieuEvent;
     private int nbPersonne;
-//    private Utilisateur idCreateur;
+
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private Utilisateur idCreateur;
 
     public Evenement(){
     }
 
-    public Evenement(int id, Date date, String nom, Time heure, String lieu, int nbPersonne){
+    public Evenement(int id, Date date, String nom, Time heure, String lieu, int nbPersonne, Utilisateur createur){
         this.idEvent = id;
         this.dateEvent = date;
         this.nomEvent = nom;
         this.heureEvent = heure;
         this.lieuEvent = lieu;
         this.nbPersonne = nbPersonne;
-        //this.idCreateur = createur;
+        this.idCreateur = createur;
     }
 
     // getter
@@ -57,9 +60,9 @@ public class Evenement {
         return nbPersonne;
     }
 
-/*    public Utilisateur getIdCreateur() {
+    public Utilisateur getIdCreateur() {
         return idCreateur;
-    }*/
+    }
 
     // setter
 
@@ -84,7 +87,7 @@ public class Evenement {
         this.nbPersonne = nbPersonne;
     }
 
-/*    public void setIdCreateur(Utilisateur idCreateur) {
+    public void setIdCreateur(Utilisateur idCreateur) {
         this.idCreateur = idCreateur;
-    }*/
+    }
 }
