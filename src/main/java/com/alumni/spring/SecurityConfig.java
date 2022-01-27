@@ -14,6 +14,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+/* Help :
+- https://www.baeldung.com/spring-security-login
+*/
+
 /*
     protected void configure(HttpSecurity http) throws Exception {
         //super.configure(http);
@@ -50,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/admin**").hasRole("ADMIN")
                 .antMatchers("/anonymous**").anonymous()
-                .antMatchers("/login**").permitAll()
+                .antMatchers("/login**", "/js/**", "/css/**", "/demo", "/").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -59,7 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureUrl("/login?error=true")
                 .and()
                 .logout()
-                .logoutUrl("/admin")
+                .logoutUrl("/deco")
                 .deleteCookies("JSESSIONID");
 
     }
