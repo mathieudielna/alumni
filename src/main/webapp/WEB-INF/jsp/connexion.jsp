@@ -1,16 +1,19 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE HTML>
+
 <html>
+
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Login Page</title>
 
     <%--
     Help
     - https://mkyong.com/spring-boot/spring-boot-hello-world-example-jsp/
     --%>
-   <%--<link href="/css/login.css" rel="stylesheet">--%>
+    <%--<link href="/css/login.css" rel="stylesheet">--%>
     <link href="<c:url value="/css/login.css" />" rel="stylesheet">
 </head>
 
@@ -28,7 +31,7 @@
          </div>-->
 
         <!-- Login Form -->
-<%--        <form name="f" action="@{/login}" method="post">--%>
+        <%--        <form name="f" action="@{/login}" method="post">--%>
         <form name="f" action="@{/login}" method="post">
 
             <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
@@ -38,12 +41,12 @@
             <input type="submit" class="fadeIn fourth" value="Connexion">
 
             <!--Erreur-->
-            <div th:if="${param.error}" class="alert alert-error">
-                Login ou mot de passe invalide!
+            <div class="alert alert-error">
+                <c:if test="${param.error}" > Login ou mot de passe invalide! </c:if>
             </div>
 
-            <div th:if="${param.logout}" class="alert alert-error">
-                Vous avez été deconnecté!
+            <div class="alert alert-error">
+                <c:if test="${param.logout}"> Vous avez été deconnecté! </c:if>
             </div>
 
         </form>
