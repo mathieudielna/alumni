@@ -26,4 +26,9 @@ public class UserController {
     public String anonymous() {
         return  ("<h1>This is my anonymous page!</h1>");
     }
+
+    @RequestMapping("/creationCompte")
+    public String creationCompte() {
+        return  ("");
+    }
 }
