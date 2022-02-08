@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+/*@RestController*/
 @Controller
 public class UserController {
 
@@ -23,7 +23,7 @@ public class UserController {
     public String home(Model model) {
         List<Utilisateur> user = userRep.findUtilisateursById(1);
         System.out.print(user.get(0).getNom());
-        model.addAttribute("message", "Ok ok!");
+        model.addAttribute("message", "Hello :" + " " +  user.get(0).getNom());
     return "index";
     }
 
