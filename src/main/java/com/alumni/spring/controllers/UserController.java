@@ -1,15 +1,30 @@
 package com.alumni.spring.controllers;
 
 
+import com.alumni.spring.models.Utilisateur;
+import com.alumni.spring.repository.UtilisateurRepository;
+import com.alumni.spring.service.EvenementService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
+@Controller
 public class UserController {
 
+    @Autowired
+    UtilisateurRepository userRep;
+
     @RequestMapping("/")
-    public String home() {
-        return("<h1>This is my home page!</h1>");
+    public String home(Model model) {
+        List<Utilisateur> user = userRep.findUtilisateursById(1);
+        System.out.print(user.get(0).getNom());
+        model.addAttribute("message", "Ok ok!");
+    return "index";
     }
 
     @RequestMapping("/user")

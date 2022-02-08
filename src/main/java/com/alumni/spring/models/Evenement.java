@@ -22,8 +22,6 @@ public class Evenement {
     @JoinColumn(name = "id")
     private Utilisateur idCreateur;
 
-    public Evenement(){
-    }
 
     public Evenement(int id, Date date, String nom, Time heure, String lieu, int nbPersonne, Utilisateur createur){
         this.idEvent = id;
