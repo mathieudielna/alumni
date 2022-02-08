@@ -1,5 +1,7 @@
 package com.alumni.spring.models;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
@@ -12,19 +14,28 @@ public class Evenement {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idEvent;
+
+    @NotNull
     private Date dateEvent;
+
+    @NotNull
     private String nomEvent;
+
+    @NotNull
     private Time heureEvent;
+
+    @NotNull
     private String lieuEvent;
+
     private int nbPersonne;
 
     @ManyToOne
     @JoinColumn(name = "id")
     private Utilisateur idCreateur;
 
+    public Evenement(){}
 
-    public Evenement(int id, Date date, String nom, Time heure, String lieu, int nbPersonne, Utilisateur createur){
-        this.idEvent = id;
+    public Evenement(Date date, String nom, Time heure, String lieu, int nbPersonne, Utilisateur createur){
         this.dateEvent = date;
         this.nomEvent = nom;
         this.heureEvent = heure;

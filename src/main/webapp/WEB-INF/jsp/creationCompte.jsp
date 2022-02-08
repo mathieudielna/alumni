@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
-        <title>Création de compte</title>
+        <title>Inscription</title>
     </head>
     <body>
         <form action="@{/acountCreation}" method="post">
@@ -11,6 +11,8 @@
             <input type="text" id="nom" class="fadeIn second" name="nom" placeholder="nom">
             <input type="number" id="anneePromotion" class="fadeIn second" name="anneePromotion" placeholder="anneePromotion">
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="Mot de passe">
+
+            <input type="submit" class="fadeIn fourth" value="inscription">
         </form>
 
         <!--Erreur-->

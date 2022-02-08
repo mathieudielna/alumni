@@ -1,5 +1,6 @@
 package com.alumni.spring.models;
 
+import com.sun.istack.NotNull;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -14,19 +15,30 @@ public class Utilisateur implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    @NotNull
+    @Column(unique=true)
     private String login;
+
+    @NotNull
     private String password;
+
+    @NotNull
     private String nom;
+
+    @NotNull
     private String prenom;
+
+    @NotNull
     private Date anneePromotion;
+
+    @NotNull
     private String role;
 
-    public Utilisateur(){
-    }
+    public Utilisateur() {}
 
-    public Utilisateur(int id, String login, String password, String nom, String prenom, Date anneePromotion,
+    public Utilisateur( String login, String password, String nom, String prenom, Date anneePromotion,
                        String role){
-        this.id = id;
         this.login = login;
         this.password = password;
         this.nom = nom;

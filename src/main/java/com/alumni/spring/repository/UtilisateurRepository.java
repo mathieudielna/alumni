@@ -11,4 +11,5 @@ import java.util.List;
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Integer> {
 
     List<Utilisateur> findUtilisateursById(Integer id);
+    List<Utilisateur> findUtilisateursByLogin(String login);
 }
