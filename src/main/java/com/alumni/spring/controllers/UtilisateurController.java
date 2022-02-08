@@ -30,13 +30,13 @@ public class UtilisateurController {
     return "index";
     }
 
-    @RequestMapping("/inscription")
-    public String creationCompte(WebRequest request, Model model) {
-        Utilisateur newUser = new Utilisateur();
-        model.addAttribute("user", newUser)
+   /*         @RequestMapping("/inscription")
+            public String creationCompte(WebRequest request, Model model) {
+                Utilisateur newUser = new Utilisateur();
+                model.addAttribute("user", newUser)
 
-        return  "creationCompte";
-    }
+                return  "creationCompte";
+            }*/
 
     @RequestMapping("/user")
     public String normalUser() {

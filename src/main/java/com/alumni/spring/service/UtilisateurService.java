@@ -24,10 +24,20 @@ public class UtilisateurService {
         return user;
     }
 
-    @Override
+/*    @Override
     public void inscription(Utilisateur newUtilisateur) {
 
-    }
+        if(utilisateurExist(newUtilisateur.getLogin())){
+          System.out.println("Login exist deja!");
+        }
+        Utilisateur utilisateur = new Utilisateur();
 
+    }*/
+
+  /*  @Override
+    public boolean utilisateurExist(String login) {
+        return userRep.findUtilisateursByLogin(login)  !=null ? true : false;
+    }
+*/
 
 }
