@@ -1,23 +1,27 @@
 
 # Sommaire 
 
-- [Cadrage & périmètre](#introduction) 
+- [Cadrage & périmètre](#cadrage--périmètre) 
+     
 
-- [Expression fonctionnelle du besoin](#paragraph1)
+- [Expression fonctionnelle du besoin](#expression-fonctionnelle-du-besoin)
+  - [Modélisation conceptuelle et logique des données](#modélisation-conceptuelle-et-logique-des-données)  
+  - [Répartition des tâches](#répartition-des-tâches)
 
-- [Méthodes et contraintes ](#paragraph2) 
-
-- [Délais et parties prenantes ](#paragraph3) 
-
-- [Outils](#paragraphe4)
+- [Méthodes et contraintes ](#méthode-et-contraintes) 
+  -[Méthode](#méthode)
+- [Délais et parties prenantes ](#délais-et-parties-prenantes) 
+   - [Délais](#délais)
+   - [Parties prenantes](#parties-prenantes)
+- [Outils](#outils)
 
 - [Tests](#paragraphe5)
 
 - [Patterns de programmation](#paragraphe6)
 
-- [Conclusion](#paragraphe7)
+- [Conclusion](#conclusion)
 
-- [Bibliographie ](#paragraphe8)
+- [Bibliographie ](#bibliographie)
   
 
 # Cadrage & périmètre
@@ -25,7 +29,14 @@
 L’IUT Paris Descartes a décidé de monter un réseau alumni avec ses anciennes promos, élèves / professeurs. Afin de maintenir le contact et d’organiser des événements / rencontres universitaires avec ceux-ci sous forme de réseau social. 
 
 # Expression fonctionnelle du besoin
+## Modélisation conceptuelle et logique des données 
+MCD / MLD 
+(image)
 
+
+
+
+## Répartition des tâches
 | Fonction                | Attribution                                       | Fonctionnelle (oui/non)    |Règle (secondaire) |
 | :-----------------------| :-------------------------------------------------| :------------------------- |:------------------|
 | `Création utilisateur`          | [@mathieudielna](https://github.com/mathieudielna)| **en cours**               |                   |
@@ -50,5 +61,51 @@ Pour mettre en place cette méthode nous avons choisi l’outil Trello.
 ![](https://github.com/mathieudielna/alumni/blob/master/documentation/Trello.PNG)
 
 ## Contraintes
+Les contraintes liées aux projets sont nombreuses. Pour cela, nous pouvons les classer en catégorie.  
+- Outils rédactionnels & organisationnels  : utilisation markdown, trello, git 
+- Outils de Base de données : mysql
+- Langage de programmation : Java, Spring
+# Délais et parties prenantes
+## Délais 
+Le projet est à livrer le 14 mars 2022
+## Parties prenantes 
+| Personnes                | Fonction                                        
+| :----------------------- | :---------------|
+| Sabrina Sandirasegarane  | Maître d’ouvrage|
+| Davia Moujabber          | Maître d’ouvrage|
+| Aurore Leclerc           | Développeur     |
+| Mathieu Dielna           | Développeur     | 
+| Lucas Juillard           |Développeur      | 
+| Vincent Boutour          |Investisseur     |
+| les étudiants et professeurs de l’IUT de Paris |Utilisateurs|
+
+
+# Outils
+- Outils rédactionnels & organisationnels  : utilisation markdown, trello, git 
+- Outils de Base de données : mysql
+- Langage de programmation : java,   
+- Gestion des dépendances :  maven
+- Outils de programmation : débuggueur
+- Framework: spring Vue.js 
+- Outils diverses : documentation, internet
+- Patterns de programmation : MVC
+
+# Conclusion 
+- Problèmes rencontrés , solutions trouvées 
+- Points perfectibles 
+- Reste à faire 
+- Points non solutionnés 
+- retours personnels sur le module :
+Ce projet nous a permis de montrer nos compétences mais aussi d'apprendre de nouvelles notions. 
+Grâce au module, nous avons pu apprendre à mieux travailler en équipe via github.   
+
+# Bibliographie 
+- [Github](https://github.com/mathieudielna/alumni)
+- [Trello](https://trello.com/b/Kce0Yf2I/alumni)
+- [Aide alias de commande](https://github.com/ViBiOh/dotfiles/blob/main/symlinks/gitconfig)
+
+- [Cours de Génie Logiciel](l3miage.fr)
+- [Aide Markdown](https://github.com/InseeFrLab/utilitR/blob/master/03_Fiches_thematiques/Fiche_rmarkdown.Rmd)
+- [Editeur Markdown](readme.so)
 
 
