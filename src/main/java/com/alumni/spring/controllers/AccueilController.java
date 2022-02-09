@@ -8,13 +8,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.context.request.WebRequest;
 
 import java.util.List;
 
 /*@RestController*/
 @Controller
-public class UtilisateurController {
+public class AccueilController {
 
     @Autowired
     UtilisateurService userService;
@@ -24,19 +23,12 @@ public class UtilisateurController {
 
     @RequestMapping("/")
     public String accueil(Model model) {
-        List<Utilisateur> user = userService.getUserById(1);
-        System.out.print(user.get(0).getNom());
-        model.addAttribute("message", "Hello :" + " " +  user.get(0).getNom());
+        Utilisateur user = userService.getUserById(1);
+        System.out.print(user.getNom());
+        model.addAttribute("message", "Hello :" + " " +  user.getNom());
     return "index";
     }
 
-   /*         @RequestMapping("/inscription")
-            public String creationCompte(WebRequest request, Model model) {
-                Utilisateur newUser = new Utilisateur();
-                model.addAttribute("user", newUser)
-
-                return  "creationCompte";
-            }*/
 
     @RequestMapping("/user")
     public String normalUser() {

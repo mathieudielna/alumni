@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
 @EnableWebSecurity
@@ -54,7 +53,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/admin**").hasRole("ADMIN")
                 .antMatchers("/anonymous**").anonymous()
-                .antMatchers("/login**", "/js/**", "/css/**", "/demo", "/", "/inscription").permitAll()
+                .antMatchers("/login**", "/js/**", "/css/**", "/demo", "/",
+                        "/inscription", "/ajoutuser", "/info").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

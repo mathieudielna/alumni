@@ -13,7 +13,7 @@
 <h1>Welcome</h1>
 <h2>${message}</h2>
 
-<a href="${pageContext.request.contextPath}/personList">Connexion</a>
+<a href="${pageContext.request.contextPath}/demo">Connexion</a>
 
 </body>
 

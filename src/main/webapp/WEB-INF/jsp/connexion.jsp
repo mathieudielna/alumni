@@ -32,7 +32,7 @@
 
         <!-- Login Form -->
         <%--        <form name="f" action="@{/login}" method="post">--%>
-        <form name="f" action="@{/login}" method="post">
+        <form name="f" action="/perform_login" method="post">
 
             <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
 

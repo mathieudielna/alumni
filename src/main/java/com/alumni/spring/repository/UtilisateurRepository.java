@@ -10,6 +10,8 @@ import java.util.List;
 @Repository
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Integer> {
 
-    List<Utilisateur> findUtilisateursById(Integer id);
+    Utilisateur findUtilisateursById(Integer id);
     List<Utilisateur> findUtilisateursByLogin(String login);
+
+    Utilisateur getByLogin(String login);
 }
