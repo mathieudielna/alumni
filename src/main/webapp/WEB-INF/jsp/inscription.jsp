@@ -11,8 +11,7 @@
     <body>
     <div>Inscription</div>
 
-      <form:form method="POST" action="ajoutuser" modelAttribute="utilisateur">
-
+      <form:form method="POST" action="ajoutuser" modelAttribute="utilisateurForm">
         <table>
             <tr>
                 <td><form:input path="login" placeholder="login" /></td>
@@ -30,7 +29,7 @@
                 <td><form:password path="password" placeholder="password" /></td>
             </tr>
             <tr>
-                <td><form:input path="role" placeholder="role" /></td>
+                <td><form:input type="hidden" path="role" placeholder="role" value="ROLE_USER" /></td>
             </tr>
             <tr>
                 <td><form:button>inscription</form:button></td>
@@ -38,11 +37,11 @@
         </form:form>
 
         <!--Erreur-->
-  <%--          <div class="alert alert-error">
+            <div class="alert alert-error">
                 <c:if test="${param.error}" >Informations incomplètes et/ou erronées</c:if>
             </div>
             <div class="alert alert-error">
                 <c:if test="${param.success}">Votre compte a été correctement crée</c:if>
-            </div>--%>
+            </div>
     </body>
 </html>

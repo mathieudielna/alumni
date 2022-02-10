@@ -18,18 +18,11 @@ import java.util.List;
 public class UtilisateurService implements UserDetailsService {
 
     UtilisateurRepository utilisateurRepository;
-
     PasswordEncoder passwordEncoder;
 
-
-    /*
-    * @Override
-    * */
-
     public void inscription(Utilisateur utilisateur) throws Exception {
-
-        //Let's check if user already registered with us
         if(verifUtilisateurExist(utilisateur.getLogin())){
+            System.out.println(verifUtilisateurExist(utilisateur.getLogin()));
             throw new Exception("Un utilisateur exist deja avec ce login!");
         }
         Utilisateur userEntity = new Utilisateur();

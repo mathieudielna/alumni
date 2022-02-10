@@ -23,7 +23,7 @@
         <!-- Tabs Titles -->
         <h2 class="active"> Connexion </h2>
 
-        <!--        <h2 class="inactive underlineHover">Sign Up </h2>-->
+        <a href="creationCompte.jsp"><h2 class="inactive underlineHover">Sign Up </h2></a>
 
         <!-- Icon -->
         <!-- <div class="fadeIn first">

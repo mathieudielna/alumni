@@ -13,5 +13,9 @@
         <td>login :</td>
         <td>${login}</td>
     </tr>
+    <tr>
+        <td>Role :</td>
+        <td>${role}</td>
+    </tr>
 </table>
 </body>
