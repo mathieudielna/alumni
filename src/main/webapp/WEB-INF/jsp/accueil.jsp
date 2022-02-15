@@ -3,17 +3,18 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Home</title>
+    <title>Accueil</title>
     <%--<link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/css/style.css"/>--%>
-
-    <link href="<c:url value="/css/.css" />" rel="stylesheet">
+    <link href="<c:url value="" />" rel="stylesheet">
 </head>
-<body>
-<h1>Welcome</h1>
-<h2>${message}</h2>
 
-<a href="${pageContext.request.contextPath}/demo">Connexion</a>
+<body>
+
+<div>Ok Acceuil</div>
+<div>${message}</div>
+
+<a href="${pageContext.request.contextPath}/inscription">Inscription</a>
 
 </body>
 

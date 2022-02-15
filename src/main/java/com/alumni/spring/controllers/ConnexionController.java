@@ -1,14 +1,13 @@
 package com.alumni.spring.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class LoginController {
+public class ConnexionController {
 
-    @RequestMapping("/demo")
-    public String login() {
+    @RequestMapping("/connexion")
+    public String connexion() {
         return "connexion";
     }
 

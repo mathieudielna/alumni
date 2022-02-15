@@ -13,7 +13,7 @@ public class Evenement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idEvent;
+    private Long idEvent;
 
     @NotNull
     private Date dateEvent;
@@ -45,7 +45,7 @@ public class Evenement {
     }
 
     // getter
-    public int getIdEvent() {
+    public Long getIdEvent() {
         return idEvent;
     }
 
@@ -74,8 +74,6 @@ public class Evenement {
     }
 
     // setter
-
-
     public void setDateEvent(Date dateEvent) {
         this.dateEvent = dateEvent;
     }

@@ -8,10 +8,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UtilisateurRepository extends JpaRepository<Utilisateur, Integer> {
+public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> {
 
     Utilisateur findUtilisateursById(Integer id);
-    List<Utilisateur> findUtilisateursByLogin(String login);
+    Utilisateur findUtilisateursByLogin(String login);
 
     Utilisateur getByLogin(String login);
 }

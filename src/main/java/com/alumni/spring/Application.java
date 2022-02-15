@@ -18,7 +18,6 @@ import javax.servlet.ServletException;
 @SpringBootApplication
 public class Application implements WebApplicationInitializer, WebMvcConfigurer
 {
-
 	/*
 	* HELP :
 	* 	WebMvcConfigurer

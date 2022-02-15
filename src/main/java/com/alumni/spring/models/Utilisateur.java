@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "utilisateur")
@@ -14,7 +15,7 @@ public class Utilisateur implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @NotNull
     @Column(unique=true)
@@ -32,19 +33,17 @@ public class Utilisateur implements UserDetails {
     @NotNull
     private Date anneePromotion;
 
-    @NotNull
-    private String role;
+    @ManyToMany
+    private Set<Role> roles;
 
     public Utilisateur() {}
 
-    public Utilisateur( String login, String password, String nom, String prenom, Date anneePromotion,
-                       String role){
+    public Utilisateur( String login, String password, String nom, String prenom, Date anneePromotion){
         this.login = login;
         this.password = password;
         this.nom = nom;
         this.prenom = prenom;
         this.anneePromotion = anneePromotion;
-        this.role = role;
     }
 
     // UserDetails
@@ -84,7 +83,7 @@ public class Utilisateur implements UserDetails {
     }
 
     //getter
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -99,20 +98,15 @@ public class Utilisateur implements UserDetails {
     public String getPrenom() {
         return prenom;
     }
-
     public Date getAnneePromotion() {
         return anneePromotion;
     }
 
-    public String getRole() {
-        return role;
+    public Set<Role> getRoles() {
+        return roles;
     }
 
     //Setter
-    public void setRole(String role) {
-        this.role = role;
-    }
-
     public void setLogin(String login) {
         this.login = login;
     }
@@ -131,5 +125,9 @@ public class Utilisateur implements UserDetails {
 
     public void setAnneePromotion(Date anneePromotion) {
         this.anneePromotion = anneePromotion;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }

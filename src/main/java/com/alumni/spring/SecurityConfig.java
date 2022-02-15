@@ -2,10 +2,12 @@ package com.alumni.spring;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -13,25 +15,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-/* Help :
-- https://www.baeldung.com/spring-security-login
-*/
 
-/*
-    protected void configure(HttpSecurity http) throws Exception {
-        //super.configure(http);
-        http
-                .authorizeRequests()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll();
-    }*/
-
+    /* Help :
+    - https://www.baeldung.com/spring-security-login
+    */
     @Bean
-    public PasswordEncoder passwordEncoder() {
+    public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+    @Override
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
     }
 
     @Override
@@ -53,7 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/admin**").hasRole("ADMIN")
                 .antMatchers("/anonymous**").anonymous()
-                .antMatchers("/login**", "/js/**", "/css/**", "/demo", "/",
+                .antMatchers("/js/**", "/css/**", "/demo", "/", "/connexion",
                         "/inscription", "/ajoutuser", "/info").permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -67,4 +62,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .deleteCookies("JSESSIONID");
 
     }
+
+    /*
+    protected void configure(HttpSecurity http) throws Exception {
+        //super.configure(http);
+        http
+                .authorizeRequests()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .permitAll();
+    }*/
 }
