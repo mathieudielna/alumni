@@ -1,0 +1,12 @@
+nav {
+    position: relative;
+    display: flex;
+    background-color: white;
+    height: 25%;
+
+}
+
+nav div {
+    background-color: #931B33;
+    padding: 1em;
+}
