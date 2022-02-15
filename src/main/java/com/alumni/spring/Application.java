@@ -18,12 +18,6 @@ import javax.servlet.ServletException;
 @SpringBootApplication
 public class Application implements WebApplicationInitializer, WebMvcConfigurer
 {
-	/*
-	* HELP :
-	* 	WebMvcConfigurer
-	* @EnableWebMvc, @Configuration
-	 * https://stackoverflow.com/questions/27170772/where-to-put-static-files-such-as-css-in-a-spring-boot-project
-	* */
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);

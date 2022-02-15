@@ -3,7 +3,6 @@ package com.alumni.spring.controllers;
 import com.alumni.spring.models.Utilisateur;
 import com.alumni.spring.service.SecurityService;
 import com.alumni.spring.service.UtilisateurService;
-
 import com.alumni.spring.validator.UtilisateurValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
-import java.io.IOException;
 
 
 @Controller
@@ -24,9 +22,7 @@ public class InscriptionController {
     private UtilisateurValidator utilisateurValidator;
      */
 
-    /*
-    * https://hellokoding.com/registration-and-login-example-with-spring-security-spring-boot-spring-data-jpa-hsql-jsp/
-    */
+
     @GetMapping("/inscription")
     public String inscription(Model model){
         model.addAttribute("utilisateurForm", new Utilisateur());

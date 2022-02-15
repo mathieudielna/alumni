@@ -1,5 +1,8 @@
 package com.alumni.spring;
 
+import com.alumni.spring.service.UtilisateurDetailsServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -8,21 +11,25 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-
     /* Help :
     - https://www.baeldung.com/spring-security-login
     */
+    @Qualifier("utilisateurDetailsServiceImpl")
+    @Autowired
+    private UserDetailsService userDetailsService;
+
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
     @Override
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -53,12 +60,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginProcessingUrl("/perform_login")
-                .defaultSuccessUrl("/user", true)
-                .failureUrl("/login?error=true")
-                .and()
+                .loginPage("/connexion")
+                    .loginProcessingUrl("/perform_login")
+                    .defaultSuccessUrl("/info", true)
+                    .failureUrl("/connexion?error=true")
+                    .and()
                 .logout()
-                .logoutUrl("/deco")
+                .logoutUrl("/deconnexion")
                 .deleteCookies("JSESSIONID");
 
     }

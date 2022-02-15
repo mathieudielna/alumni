@@ -1,8 +1,6 @@
 package com.alumni.spring.models;
 
-
 import jdk.jshell.execution.Util;
-
 import javax.persistence.*;
 import java.util.Set;
 
