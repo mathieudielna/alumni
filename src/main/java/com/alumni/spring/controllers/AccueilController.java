@@ -1,16 +1,10 @@
 package com.alumni.spring.controllers;
 
 
-import com.alumni.spring.models.Utilisateur;
 import com.alumni.spring.service.UtilisateurService;
-import org.aspectj.bridge.IMessage;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 /*@RestController*/
 @Controller
