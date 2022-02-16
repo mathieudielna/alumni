@@ -42,20 +42,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("user2").password(bCryptPasswordEncoder().encode("user2Pass")).roles("USER")
                 .and()
                 .withUser("admin").password(bCryptPasswordEncoder().encode("adminPass")).roles("ADMIN");
-
-        auth.jdbcAuthentication()
+     /*   Methode par requête
+     auth.jdbcAuthentication().dataSource(dataSource)
                 .usersByUsernameQuery(
-                        ""
-                ).authoritiesByUsernameQuery(
-                        ""
-                );
+                        "SELECT `login`,`password` FROM `utilisateur` WHERE `login`=?"
+                ).authoritiesByUsernameQuery("SELECT `utilisateurs_id`, " +
+                        "`roles_id` FROM utilisateur_roles WHERE `utilisateurs_id`" +
+                        " = (SELECT `login` FROM `utilisateur` WHERE id = ?)");
+    */
+        auth.
+                userDetailsService(userDetailsService).
+                passwordEncoder(bCryptPasswordEncoder());
     }
 
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         // http builder configurations for authorize requests and form login (see below)
         http
-           .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/admin**").hasRole("ADMIN")
                 .antMatchers("/anonymous**").anonymous()
@@ -65,12 +68,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/connexion").loginProcessingUrl("/connexion").failureUrl("/connexion?error=true")
-                .usernameParameter("login").passwordParameter("password")
+                .usernameParameter("login").passwordParameter("password").permitAll()
                     .defaultSuccessUrl("/info", true)
                     .and()
                 .logout()
-                .logoutUrl("/deconnexion")
-                .deleteCookies("JSESSIONID");
+                .logoutUrl("/deconnexion").logoutSuccessUrl("/connexion?logout")
+                .deleteCookies("JSESSIONID")
+                .and().csrf();
 
     }
 
@@ -78,22 +82,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
-//
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-//    }
 
-
-    /*
-    protected void configure(HttpSecurity http) throws Exception {
-        //super.configure(http);
-        http
-                .authorizeRequests()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll();
-    }*/
 }

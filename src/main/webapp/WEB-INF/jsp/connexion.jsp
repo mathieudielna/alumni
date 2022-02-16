@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page session="true"%>
 
 <!DOCTYPE HTML>
 
@@ -27,20 +28,20 @@
 
         <!-- Icon -->
         <!-- <div class="fadeIn first">
-             <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon"/>
+             <img src="" id="icon" alt="User Icon"/>
          </div>-->
 
-        <!-- Login Form -->
-        <%--        <form name="f" action="@{/login}" method="post">--%>
-        <form name="f" action="connexion" method="post">
+
+        <form name="loginForm" action="connexion" method="post">
 
             <input type="text" id="login" class="fadeIn second" name="login" placeholder="indentifiant">
 
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="Mot de passe">
 
+            <input type="submit" class="fadeIn fourth" value="Connexion">
+
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-            <input type="submit" class="fadeIn fourth" value="Connexion">
         </form>
             <!--Erreur-->
             <div class="alert alert-error">
@@ -50,9 +51,6 @@
             <div class="alert alert-error">
                 <c:if test="${param.logout}"> Vous avez été deconnecté! </c:if>
             </div>
-
-
-
         <!-- Remind Passowrd -->
         <!--        <div id="formFooter">-->
         <!--            <a class="underlineHover" href="#">Forgot Password?</a>-->
