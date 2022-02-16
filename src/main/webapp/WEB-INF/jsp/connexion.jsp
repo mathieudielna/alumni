@@ -32,14 +32,16 @@
 
         <!-- Login Form -->
         <%--        <form name="f" action="@{/login}" method="post">--%>
-        <form name="f" action="/perform_login" method="post">
+        <form name="f" action="connexion" method="post">
 
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="indentifiant">
 
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="Mot de passe">
 
-            <input type="submit" class="fadeIn fourth" value="Connexion">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
+            <input type="submit" class="fadeIn fourth" value="Connexion">
+        </form>
             <!--Erreur-->
             <div class="alert alert-error">
                 <c:if test="${param.error}" > Login ou mot de passe invalide! </c:if>
@@ -49,7 +51,7 @@
                 <c:if test="${param.logout}"> Vous avez été deconnecté! </c:if>
             </div>
 
-        </form>
+
 
         <!-- Remind Passowrd -->
         <!--        <div id="formFooter">-->

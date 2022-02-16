@@ -22,6 +22,7 @@ public class Application implements WebApplicationInitializer, WebMvcConfigurer
 
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
+
 		AnnotationConfigWebApplicationContext root = new AnnotationConfigWebApplicationContext();
 		root.register(SecurityConfig.class);
 

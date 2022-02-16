@@ -11,6 +11,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
@@ -22,26 +25,30 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+    @Autowired
+    private DataSource dataSource;
 
-    @Override
     @Bean
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
         // authentication manager (see below)
         auth.inMemoryAuthentication()
-                .withUser("user1").password(passwordEncoder().encode("user1Pass")).roles("USER")
+                .withUser("user1").password(bCryptPasswordEncoder().encode("user1Pass")).roles("USER")
                 .and()
-                .withUser("user2").password(passwordEncoder().encode("user2Pass")).roles("USER")
+                .withUser("user2").password(bCryptPasswordEncoder().encode("user2Pass")).roles("USER")
                 .and()
-                .withUser("admin").password(passwordEncoder().encode("adminPass")).roles("ADMIN");
+                .withUser("admin").password(bCryptPasswordEncoder().encode("adminPass")).roles("ADMIN");
+
+        auth.jdbcAuthentication()
+                .usersByUsernameQuery(
+                        ""
+                ).authoritiesByUsernameQuery(
+                        ""
+                );
     }
 
     @Override
@@ -57,16 +64,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/connexion")
-                    .loginProcessingUrl("/perform_login")
+                .loginPage("/connexion").loginProcessingUrl("/connexion").failureUrl("/connexion?error=true")
+                .usernameParameter("login").passwordParameter("password")
                     .defaultSuccessUrl("/info", true)
-                    .failureUrl("/connexion?error=true")
                     .and()
                 .logout()
                 .logoutUrl("/deconnexion")
                 .deleteCookies("JSESSIONID");
 
     }
+
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+//
+//    @Autowired
+//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+//    }
+
 
     /*
     protected void configure(HttpSecurity http) throws Exception {
