@@ -5,6 +5,6 @@
     <title>Inscription</title>
 </head>
 <body>
-    <div>Ok inscrit</div>
+    <div>Ok Admin</div>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.alumni.spring.models;
 
 import com.sun.istack.NotNull;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -12,29 +13,21 @@ import java.util.Set;
 @Entity
 @Table(name = "utilisateur")
 public class Utilisateur implements UserDetails {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @NotNull
     @Column(unique=true)
     private String login;
-
-    @NotNull
+    @Length(min = 3,message = "*minimum de 5 caractères!")
     private String password;
-
-    @NotNull
+    @Length(min = 2,message = "*minimum de 2 caractères!")
     private String nom;
-
-    @NotNull
+    @Length(min = 2,message = "*minimum de 2 caractères!")
     private String prenom;
-
-    @NotNull
     private Date anneePromotion;
-
     @ManyToMany
     private Set<Role> roles;
+
 
     public Utilisateur() {}
 
@@ -98,6 +91,7 @@ public class Utilisateur implements UserDetails {
     public String getPrenom() {
         return prenom;
     }
+
     public Date getAnneePromotion() {
         return anneePromotion;
     }

@@ -59,8 +59,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception {
         // http builder configurations for authorize requests and form login (see below)
         http
+                .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/admin**").hasRole("ADMIN")
+                .antMatchers("/admin**").hasAuthority("ROLE_ADMIN")
                 .antMatchers("/anonymous**").anonymous()
                 .antMatchers("/js/**", "/css/**", "/demo", "/", "/connexion",
                         "/inscription", "/ajoutuser", "/info").permitAll()
@@ -73,8 +74,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                 .logout()
                 .logoutUrl("/deconnexion").logoutSuccessUrl("/connexion?logout")
-                .deleteCookies("JSESSIONID")
-                .and().csrf();
+                .deleteCookies("JSESSIONID");
 
     }
 

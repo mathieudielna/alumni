@@ -21,15 +21,15 @@ public class UtilisateurValidator implements Validator {
     }
 
   /*  @Override*/
-    public void validate(Object o, Errors errors) {
+    public void valide(Object o, Errors errors) {
         Utilisateur utilisateur = (Utilisateur) o;
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "NotEmpty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "login", "NotEmpty");
         if (utilisateur.getUsername().length() < 6 || utilisateur.getUsername().length() > 32) {
-            errors.rejectValue("username", "Size.userForm.username");
+            errors.rejectValue("login", "Size.userForm.login");
         }
         if (utilisateurService.trouverParLogin(utilisateur.getUsername()) != null) {
-            errors.rejectValue("username", "Duplicate.userForm.username");
+            errors.rejectValue("login", "Duplicate.userForm.login");
         }
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty");

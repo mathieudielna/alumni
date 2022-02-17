@@ -1,6 +1,7 @@
 package com.alumni.spring.models;
 
 import com.sun.istack.NotNull;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import java.sql.Time;
@@ -10,23 +11,14 @@ import java.util.Date;
 @Entity
 @Table(name = "evenement")
 public class Evenement {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idEvent;
-
-    @NotNull
     private Date dateEvent;
-
-    @NotNull
+    @Length(min = 5,message = "*minimum de 5 caractères!")
     private String nomEvent;
-
-    @NotNull
     private Time heureEvent;
-
-    @NotNull
     private String lieuEvent;
-
     private int nbPersonne;
 
     @ManyToOne
