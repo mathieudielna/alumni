@@ -5,6 +5,6 @@
     <title>Inscription</title>
 </head>
 <body>
-    <div>Ok Admin</div>
+    <div>inscription or connexion success</div>
 </body>
 </html>

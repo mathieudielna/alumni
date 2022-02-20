@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,16 +19,9 @@ import javax.sql.DataSource;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    /* Help :
-    - https://www.baeldung.com/spring-security-login
-    */
     @Qualifier("utilisateurDetailsServiceImpl")
     @Autowired
     private UserDetailsService userDetailsService;
-
-    @Autowired
-    private DataSource dataSource;
-
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
@@ -42,14 +36,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("user2").password(bCryptPasswordEncoder().encode("user2Pass")).roles("USER")
                 .and()
                 .withUser("admin").password(bCryptPasswordEncoder().encode("adminPass")).roles("ADMIN");
-     /*   Methode par requête
-     auth.jdbcAuthentication().dataSource(dataSource)
-                .usersByUsernameQuery(
-                        "SELECT `login`,`password` FROM `utilisateur` WHERE `login`=?"
-                ).authoritiesByUsernameQuery("SELECT `utilisateurs_id`, " +
-                        "`roles_id` FROM utilisateur_roles WHERE `utilisateurs_id`" +
-                        " = (SELECT `login` FROM `utilisateur` WHERE id = ?)");
-    */
         auth.
                 userDetailsService(userDetailsService).
                 passwordEncoder(bCryptPasswordEncoder());
@@ -63,19 +49,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/admin**").hasAuthority("ROLE_ADMIN")
                 .antMatchers("/anonymous**").anonymous()
-                .antMatchers("/js/**", "/css/**", "/demo", "/", "/connexion",
-                        "/inscription", "/ajoutuser", "/info").permitAll()
+                .antMatchers("/js/**", "/css/**", "/demo", "/", "/connexion", "/inscription", "/ajoutuser", "/info").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/connexion").loginProcessingUrl("/connexion").failureUrl("/connexion?error=true")
                 .usernameParameter("login").passwordParameter("password").permitAll()
-                    .defaultSuccessUrl("/info", true)
+                    .defaultSuccessUrl("/validinscription", true)
                     .and()
                 .logout()
                 .logoutUrl("/deconnexion").logoutSuccessUrl("/connexion?logout")
                 .deleteCookies("JSESSIONID");
-
     }
 
     @Bean

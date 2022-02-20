@@ -6,11 +6,14 @@ import java.util.Set;
 @Entity
 @Table(name = "role")
 public class Role {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+
     private String name;
+
     @ManyToMany(mappedBy = "roles")
     private Set<Utilisateur> utilisateurs;
 
