@@ -19,9 +19,11 @@ import javax.sql.DataSource;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Qualifier("utilisateurDetailsServiceImpl")
     @Autowired
     private UserDetailsService userDetailsService;
+
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
@@ -30,12 +32,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
         // authentication manager (see below)
-        auth.inMemoryAuthentication()
-                .withUser("user1").password(bCryptPasswordEncoder().encode("user1Pass")).roles("USER")
-                .and()
-                .withUser("user2").password(bCryptPasswordEncoder().encode("user2Pass")).roles("USER")
-                .and()
-                .withUser("admin").password(bCryptPasswordEncoder().encode("adminPass")).roles("ADMIN");
         auth.
                 userDetailsService(userDetailsService).
                 passwordEncoder(bCryptPasswordEncoder());
@@ -48,14 +44,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/admin**").hasAuthority("ROLE_ADMIN")
-                .antMatchers("/anonymous**").anonymous()
-                .antMatchers("/js/**", "/css/**", "/demo", "/", "/connexion", "/inscription", "/ajoutuser", "/info").permitAll()
+                .antMatchers("valid").hasAuthority("ROLE_USER")
+                .antMatchers("/js/**", "/css/**", "/demo", "/", "/connexion",
+                        "/inscription", "/ajoutuser", "/info").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/connexion").loginProcessingUrl("/connexion").failureUrl("/connexion?error=true")
                 .usernameParameter("login").passwordParameter("password").permitAll()
-                    .defaultSuccessUrl("/validinscription", true)
+                    .defaultSuccessUrl("/valid", true)
                     .and()
                 .logout()
                 .logoutUrl("/deconnexion").logoutSuccessUrl("/connexion?logout")

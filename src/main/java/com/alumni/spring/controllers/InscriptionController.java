@@ -1,6 +1,7 @@
 package com.alumni.spring.controllers;
 
 import com.alumni.spring.models.Utilisateur;
+import com.alumni.spring.service.SecurityServiceImpl;
 import com.alumni.spring.service.UtilisateurService;
 import com.alumni.spring.validator.UtilisateurValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,17 +30,22 @@ public class InscriptionController {
 
    @PostMapping("/inscription")
     public String submit(@Valid @ModelAttribute("utilisateurForm") Utilisateur utilisateur,
-                         BindingResult result,Model model)
+                         BindingResult result)
    {
        utilisateurValidator.validate(utilisateur, result);
        if (result.hasErrors()) {
-           System.err.println("erreur avant inscription ->" + result.getAllErrors() + utilisateur.getAnneePromotion());
+           //System.err.println("erreur avant inscription ->" + result.getAllErrors() + utilisateur.getAnneePromotion());
            return "inscription";
        }
        utilisateurService.ajouterUtilisateur(utilisateur);
        //securityService.autoLogin(utilisateur.getUsername(),utilisateur.getPassword());
        return "validinscription";
    }
+
+    @GetMapping("/valid")
+    public String valid(){
+        return "validinscription";
+    }
 }
 
 
