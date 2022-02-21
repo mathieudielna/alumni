@@ -5,4 +5,5 @@ import com.alumni.spring.models.Evenement;
 
 public interface EvenementService {
     void ajouterEvenement(Evenement evenement);
+    Evenement trouverEvenementParNom(String nomEvenement);
 }

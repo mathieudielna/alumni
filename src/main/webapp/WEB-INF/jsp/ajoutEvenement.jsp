@@ -7,42 +7,41 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Ajout événement</title>
+        <title>Ajouter-événement</title>
+        <link href="<c:url value="/css/form.css" />" rel="stylesheet">
     </head>
 </html>
+
 <body>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+       <h2 class="active ">Ajouter un événement </h2>
 
-<div>Ajout evenement</div>
+        <form:form method="POST" action="ajouter" modelAttribute="evenementForm">
 
-<form:form name="loginForm" method="POST" action="/evenement/ajouter" modelAttribute="evenementForm">
-    <table>
-        <tr>
-            <td><form:label path="dateEvent">Date de l'évenement</form:label></td>
-            <td><form:input path="dateEvent" /></td>
-            <td><form:errors path="dateEvent" cssClass="error" /></td>
-        </tr>
-        <tr>
-            <td><form:label path="nomEvent">Date de l'évenement</form:label></td>
-            <td><form:input path="nomEvent" /></td>
-            <td><form:errors path="nomEvent" cssClass="error" /></td>
-        </tr>
-        <tr>
-            <td><form:label path="heureEvent">Date de l'évenement</form:label></td>
-            <td><form:input path="heureEvent" /></td>
-            <td><form:errors path="heureEvent" cssClass="error" /></td>
-        </tr>
-        <tr>
-            <td><form:label path="lieuEvent">Date de l'évenement</form:label></td>
-            <td><form:input path="lieuEvent" /></td>
-            <td><form:errors path="lieuEvent" cssClass="error" /></td>
-        </tr>
-        <tr>
-            <td><form:label path="nbPersonne">Date de l'évenement</form:label></td>
-            <td><form:input path="nbPersonne" /></td>
-            <td><form:errors path="nbPersonne" cssClass="error" /></td>
-        </tr>
-        <td><form:button>AJOUTER EVENEMENT</form:button></td>
+            <form:input path="dateEvent"  placeholder="Date Evenement*"/>
+            <br>
+            <form:errors path="dateEvent" cssClass="error" />
 
-    </table>
-</form:form>
+            <form:input path="nomEvent" placeholder="Nom Evenement*"/>
+            <br>
+            <form:errors path="nomEvent" cssClass="error" />
+
+            <form:input path="heureEvent" placeholder="Heure Evenement*"/>
+            <br>
+            <form:errors path="heureEvent" cssClass="error" />
+
+            <form:input path="lieuEvent" placeholder="Lieu Evenement*" />
+            <br>
+            <form:errors path="lieuEvent" cssClass="error" />
+
+            <form:input path="nbPersonne"/>
+            <br>
+            <form:errors path="nbPersonne" cssClass="error" />
+
+            <input type="submit" class="fadeIn fourth" value="AJOUTER EVENEMENT">
+
+        </form:form>
+        </div>
+    </div>
 </body>

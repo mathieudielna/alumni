@@ -10,6 +10,7 @@ import org.springframework.validation.Validator;
 
 @Component
 public class UtilisateurValidator implements Validator {
+
     @Autowired
     private UtilisateurService utilisateurService;
 
@@ -21,7 +22,7 @@ public class UtilisateurValidator implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
         Utilisateur utilisateur = (Utilisateur) o;
-        System.err.println(utilisateur.getUsername());
+
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "login", "NotEmpty");
         if (utilisateur.getUsername().length() < 2   || utilisateur.getUsername().length() > 32) {
             errors.rejectValue("login", "Size.utilisateurForm.login");

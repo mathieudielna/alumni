@@ -2,6 +2,7 @@ package com.alumni.spring.controllers;
 
 import com.alumni.spring.models.Evenement;
 import com.alumni.spring.service.EvenementService;
+import com.alumni.spring.validator.EvenementValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +19,10 @@ import javax.validation.Valid;
 public class AjoutEvenementController {
 
     @Autowired
-    EvenementService evenementService;
+    private EvenementService evenementService;
+
+    @Autowired
+    private EvenementValidator evenementValidator;
 
     @GetMapping("/ajouter")
     public String ajoutEvenement(Model model){
@@ -29,8 +33,10 @@ public class AjoutEvenementController {
     @PostMapping("/ajouter")
     public String submitEvenement(@Valid @ModelAttribute("evenementForm") Evenement evenement,
                                   BindingResult result){
-        //event validator
+        //evenement.setIdCreateur();
+        evenementValidator.validate(evenement,result);
         if(result.hasErrors()){
+            System.err.println("Erreur ajout ->" + result.getAllErrors());
             return "ajoutEvenement";
         }
         evenementService.ajouterEvenement(evenement);

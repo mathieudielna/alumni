@@ -8,10 +8,10 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Inscription</title>
-        <link href="<c:url value="/css/login.css" />" rel="stylesheet">
+        <link href="<c:url value="/css/form.css" />" rel="stylesheet">
     </head>
-    <body>
 
+    <body>
     <div class="wrapper fadeInDown">
         <div id="formContent">
             <a href="/connexion"><h2 class="inactive underlineHover">Connexion </h2></a>
@@ -42,13 +42,6 @@
 
             </form:form>
 
-        <!--Erreur-->
-       <%-- <div class="alert alert-error">
-            <c:if test="${param.error}" >Informations incomplètes et/ou erronées</c:if>
-        </div>
-        <div class="alert alert-error">
-            <c:if test="${param.success}">Votre compte a été correctement crée</c:if>
-        </div>--%>
         </div>
     </div>
 

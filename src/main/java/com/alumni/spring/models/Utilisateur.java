@@ -39,7 +39,6 @@ public class    Utilisateur implements UserDetails {
 
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @NotNull
-    @Past
     private Date anneePromotion;
 
     @ManyToMany

@@ -5,6 +5,8 @@ import com.alumni.spring.repository.EvenementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EvenementServiceImpl implements EvenementService{
 
@@ -14,5 +16,9 @@ public class EvenementServiceImpl implements EvenementService{
     @Override
     public void ajouterEvenement(Evenement evenement) {
         evenementRepository.save(evenement);
+    }
+
+    public Evenement trouverEvenementParNom(String nomEvenement){
+        return evenementRepository.findByNomEvent(nomEvenement);
     }
 }
