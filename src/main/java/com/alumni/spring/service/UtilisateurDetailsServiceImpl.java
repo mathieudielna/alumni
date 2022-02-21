@@ -18,6 +18,7 @@ import java.util.Set;
 
 @Service
 public class UtilisateurDetailsServiceImpl implements UserDetailsService {
+
     @Autowired
     private UtilisateurRepository utilisateurRepository;
 

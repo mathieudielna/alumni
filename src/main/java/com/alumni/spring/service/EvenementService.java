@@ -1,4 +1,8 @@
 package com.alumni.spring.service;
 
-public class EvenementService {
+import com.alumni.spring.models.Evenement;
+
+
+public interface EvenementService {
+    void ajouterEvenement(Evenement evenement);
 }

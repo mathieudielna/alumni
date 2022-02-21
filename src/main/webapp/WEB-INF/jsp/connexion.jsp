@@ -8,35 +8,29 @@
 
 <head>
     <meta charset="UTF-8"/>
-    <title>Login Page</title>
-
-    <%--
-    Help
-    - https://mkyong.com/spring-boot/spring-boot-hello-world-example-jsp/
-    --%>
-    <%--<link href="/css/login.css" rel="stylesheet">--%>
+    <title>Connexion</title>
     <link href="<c:url value="/css/login.css" />" rel="stylesheet">
+
 </head>
 
 <body>
+
+
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <!-- Tabs Titles -->
         <h2 class="active"> Connexion </h2>
 
         <a href="/inscription"><h2 class="inactive underlineHover">Inscription </h2></a>
-
         <!-- Icon -->
         <!-- <div class="fadeIn first">
              <img src="" id="icon" alt="User Icon"/>
          </div>-->
-
-
         <form name="loginForm" action="connexion" method="post">
 
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="indentifiant">
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="identifiant">
 
-            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Mot de passe">
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="mot de passe">
 
             <input type="submit" class="fadeIn fourth" value="Connexion">
 
@@ -44,17 +38,13 @@
 
         </form>
             <!--Erreur-->
-            <div class="alert alert-error">
+          <%--  <div class="alert alert-error">
                 <c:if test="${param.error}" > Login ou mot de passe invalide! </c:if>
             </div>
 
             <div class="alert alert-error">
                 <c:if test="${param.logout}"> Vous avez été deconnecté! </c:if>
-            </div>
-        <!-- Remind Passowrd -->
-        <!--        <div id="formFooter">-->
-        <!--            <a class="underlineHover" href="#">Forgot Password?</a>-->
-        <!--        </div>-->
+            </div>--%>
 
     </div>
 </div>

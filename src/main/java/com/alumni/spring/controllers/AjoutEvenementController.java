@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/evenement")
-public class EvenementController {
+/*@RequestMapping("/evenement")*/
+public class AjoutEvenementController {
 
     @Autowired
     EvenementService evenementService;
@@ -33,7 +33,7 @@ public class EvenementController {
         if(result.hasErrors()){
             return "ajoutEvenement";
         }
-        //evenementService.ajoutereEvenement(evenement);
+        evenementService.ajouterEvenement(evenement);
         return "validinscription";
 
 

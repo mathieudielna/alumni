@@ -6,70 +6,51 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <meta charset="ISO-8859-1"/>
+        <meta charset="UTF-8"/>
         <title>Inscription</title>
+        <link href="<c:url value="/css/login.css" />" rel="stylesheet">
     </head>
     <body>
-    <div>Inscription</div>
-      <form:form method="POST" action="inscription" modelAttribute="utilisateurForm">
-        <table>
-            <tr>
-                <spring:bind path="login">
-                    <div class="form-group ${status.error ? 'has-error' : ''}">
-                        <td><form:label path="login">Login</form:label></td>
-                        <td><form:input path="login" placeholder="login" /></td>
-                        <td><form:errors path="login" cssClass="error" /></td>
-                    </div>
-                </spring:bind>
-            </tr>
-            <tr>
-                <spring:bind path="prenom">
-                    <div class="form-group ${status.error ? 'has-error' : ''}">
-                        <td><form:label path="nom">Nom</form:label></td>
-                        <td><form:input path="nom" placeholder="nom" /></td>
-                        <td><form:errors path="nom" cssClass="error" /></td>
-                    </div>
-                </spring:bind>
-            </tr>
-            <tr>
-                <spring:bind path="prenom">
-                    <div class="form-group ${status.error ? 'has-error' : ''}">
-                        <td><form:label path="prenom">Prenom</form:label></td>
-                        <td><form:input path="prenom" placeholder="prenom" /></td>
-                        <td><form:errors path="prenom" cssClass="error" /></td>
-                    </div>
-                </spring:bind>
-            </tr>
-            <tr>
-                <spring:bind path="anneePromotion">
-                    <div class="form-group ${status.error ? 'has-error' : ''}">
-                        <td><form:label path="anneePromotion">Année de la promotion</form:label></td>
-                        <td><form:input type="text" path="anneePromotion" placeholder="anneePromotion" /><em>jj/mm/aaaa</em></td>
-                        <td><form:errors path="anneePromotion" cssClass="error" /></td>
-                    </div>
-                </spring:bind>
-            </tr>
-            <tr>
-                <spring:bind path="password">
-                    <div class="form-group ${status.error ? 'has-error' : ''}">
-                        <td><form:label path="password">Mot de passe</form:label></td>
-                        <td><form:password path="password" placeholder="password" /></td>
-                        <td><form:errors path="password" cssClass="error" /></td>
-                    </div>
-                </spring:bind>
-            </tr>
-            <tr>
-                <td><form:button>inscription</form:button></td>
-            </tr>
-        </form:form>
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <a href="/connexion"><h2 class="inactive underlineHover">Connexion </h2></a>
+            <h2 class="active"> Inscription </h2>
+            <form:form method="POST" action="inscription" modelAttribute="utilisateurForm">
+                <form:input path="login" placeholder="identifiant*" />
+                <br>
+                <form:errors path="login" cssClass="error" id="error" />
+
+                <form:input path="nom" placeholder="nom*" />
+                <br>
+                <form:errors path="nom" cssClass="error" id="error" />
+
+                <form:input path="prenom" placeholder="prenom*" />
+                <br>
+                <form:errors path="prenom" cssClass="error" id="error" />
+
+                <form:input type="text" path="anneePromotion" placeholder="année(promotion)* jj/mm/aaaa" />
+                <br>
+                <form:errors path="anneePromotion" cssClass="error" id="error" />
+
+                <form:password path="password" placeholder="mot de passe*" />
+                <br>
+                <form:errors path="password" cssClass="error" id="error" />
+
+                <input type="submit" class="fadeIn fourth" value="inscription">
+                <%--<form:button type="submit" class="fadeIn fourth">inscription</form:button>--%>
+
+            </form:form>
 
         <!--Erreur-->
-        <div class="alert alert-error">
+       <%-- <div class="alert alert-error">
             <c:if test="${param.error}" >Informations incomplètes et/ou erronées</c:if>
         </div>
         <div class="alert alert-error">
             <c:if test="${param.success}">Votre compte a été correctement crée</c:if>
+        </div>--%>
         </div>
+    </div>
 
     </body>
 </html>

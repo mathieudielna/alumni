@@ -15,6 +15,7 @@
 <div>${message}</div>
 
 <a href="${pageContext.request.contextPath}/inscription">Inscription</a>
+<a href="${pageContext.request.contextPath}/connexion">Connexion</a>
 
 </body>
 

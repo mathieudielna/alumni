@@ -12,10 +12,15 @@ public class Evenement {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idEvent;
+    
     private Date dateEvent;
+
     private String nomEvent;
+
     private Time heureEvent;
+
     private String lieuEvent;
+
     private int nbPersonne;
 
     @ManyToOne

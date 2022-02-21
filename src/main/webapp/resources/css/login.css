@@ -3,7 +3,8 @@
 /* BASIC */
 
 html {
-    background-color: #56baed;
+    background-color: #931b33;
+    /*56baed*/
 }
 
 body {
@@ -73,14 +74,14 @@ h2.inactive {
 
 h2.active {
     color: #0d0d0d;
-    border-bottom: 2px solid #5fbae9;
+    border-bottom: 2px solid #931b33;
 }
 
 
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset] {
-    background-color: #56baed;
+    background-color: #931b33;
     border: none;
     color: white;
     padding: 15px 80px;
@@ -89,8 +90,8 @@ input[type=button], input[type=submit], input[type=reset] {
     display: inline-block;
     text-transform: uppercase;
     font-size: 13px;
-    -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
-    box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    -webkit-box-shadow: 0 10px 30px 0 rgba(147,27,51, 0.4);
+    box-shadow: 0 10px 30px 0 rgba(147,27,51, 0.4);
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
     margin: 5px 20px 40px 20px;
@@ -102,7 +103,7 @@ input[type=button], input[type=submit], input[type=reset] {
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
-    background-color: #39ace7;
+    background-color: #931b33;
 }
 
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active {
@@ -136,7 +137,7 @@ input[type=text], input[type=password] {
 
 input[type=text]:focus, input[type=password]:focus {
     background-color: #fff;
-    border-bottom: 2px solid #5fbae9;
+    border-bottom: 2px solid #931b33;
 }
 
 input[type=text]:placeholder, input[type=password]:placeholder {
@@ -256,7 +257,7 @@ input[type=text]:placeholder, input[type=password]:placeholder {
     bottom: -10px;
     width: 0;
     height: 2px;
-    background-color: #56baed;
+    background-color: #931b33;
     content: "";
     transition: width 0.2s;
 }
@@ -281,4 +282,9 @@ input[type=text]:placeholder, input[type=password]:placeholder {
 
 * {
     box-sizing: border-box;
+}
+
+#error {
+     font-size: 10px;
+     color: #931b33;
 }

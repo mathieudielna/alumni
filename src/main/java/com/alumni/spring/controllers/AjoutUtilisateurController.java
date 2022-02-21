@@ -1,7 +1,6 @@
 package com.alumni.spring.controllers;
 
 import com.alumni.spring.models.Utilisateur;
-import com.alumni.spring.service.SecurityServiceImpl;
 import com.alumni.spring.service.UtilisateurService;
 import com.alumni.spring.validator.UtilisateurValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,7 @@ import javax.validation.Valid;
 
 
 @Controller
-public class InscriptionController {
+public class AjoutUtilisateurController {
 
     @Autowired
     private UtilisateurService utilisateurService;
