@@ -1,44 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <!DOCTYPE HTML>
 <html>
     <head>
-        <meta charset="ISO-8859-1"/>
+        <meta charset="UTF-8"/>
         <title>Inscription</title>
+        <link href="<c:url value="/css/form.css" />" rel="stylesheet">
     </head>
-    <body>
-    <div>Inscription</div>
-      <form:form method="POST" action="ajoutuser" modelAttribute="utilisateurForm">
-        <table>
-            <tr>
-                <td><form:input path="login" placeholder="login" /></td>
-            </tr>
-            <tr>
-                <td><form:input path="nom" placeholder="nom" /></td>
-            </tr>
-            <tr>
-                <td><form:input path="prenom" placeholder="prenom" /></td>
-            </tr>
-            <tr>
-                <td><form:input path="anneePromotion" placeholder="anneePromotion" /></td>
-            </tr>
-            <tr>
-                <td><form:password path="password" placeholder="password" /></td>
-            </tr>
-            <tr>
-                <td><form:button>inscription</form:button></td>
-            </tr>
-        </form:form>
 
-        <!--Erreur-->
-        <div class="alert alert-error">
-            <c:if test="${param.error}" >Informations incomplètes et/ou erronées</c:if>
+    <body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <a href="/connexion"><h2 class="inactive underlineHover">Connexion </h2></a>
+            <h2 class="active"> Inscription </h2>
+            <form:form method="POST" action="inscription" modelAttribute="utilisateurForm">
+                <form:input path="login" placeholder="identifiant*" />
+                <br>
+                <form:errors path="login" cssClass="error" id="error" />
+
+                <form:input path="nom" placeholder="nom*" />
+                <br>
+                <form:errors path="nom" cssClass="error" id="error" />
+
+                <form:input path="prenom" placeholder="prenom*" />
+                <br>
+                <form:errors path="prenom" cssClass="error" id="error" />
+
+                <form:input type="text" path="anneePromotion" placeholder="annÃ©e(promotion)* jj/mm/aaaa" />
+                <br>
+                <form:errors path="anneePromotion" cssClass="error" id="error" />
+
+                <form:password path="password" placeholder="mot de passe*" />
+                <br>
+                <form:errors path="password" cssClass="error" id="error" />
+
+                <input type="submit" class="fadeIn fourth" value="inscription">
+                <%--<form:button type="submit" class="fadeIn fourth">inscription</form:button>--%>
+
+            </form:form>
+
         </div>
-        <div class="alert alert-error">
-            <c:if test="${param.success}">Votre compte a été correctement crée</c:if>
-        </div>
+    </div>
 
     </body>
 </html>

@@ -7,7 +7,8 @@
 - [@Davia Moujabber](https://github.com/Moujabber)
 
 
-Cahier des charges : 
+# Cahier des charges : 
 
-cadrage & périmètre :
-L’IUT Paris Descartes a décidé de monter un réseau alumni avec ses anciennes promos, élèves / professeurs. Afin de maintenir le contact et d’organiser des événements / rencontres universitaires avec ceux-ci sous forme de réseau social. 
+### Cadrage & périmètre :
+
+- L’IUT Paris Descartes a décidé de monter un réseau alumni avec ses anciennes promos, élèves / professeurs. Afin de maintenir le contact et d’organiser des événements / rencontres universitaires avec ceux-ci sous forme de réseau social. 

@@ -1,8 +1,8 @@
 package com.alumni.spring.models;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.sql.Time;
 import java.util.Date;
 
@@ -19,6 +19,8 @@ public class Evenement {
     private Date dateEvent;
 
     @NotNull
+    @Size(min = 2)
+    @Column(unique = true)
     private String nomEvent;
 
     @NotNull
@@ -27,7 +29,8 @@ public class Evenement {
     @NotNull
     private String lieuEvent;
 
-    private int nbPersonne;
+    @NotNull
+    private int nbPersonneMax;
 
     @ManyToOne
     @JoinColumn(name = "id")
@@ -35,12 +38,12 @@ public class Evenement {
 
     public Evenement(){}
 
-    public Evenement(Date date, String nom, Time heure, String lieu, int nbPersonne, Utilisateur createur){
+    public Evenement(Date date, String nom, Time heure, String lieu, int nbPersonneMax, Utilisateur createur){
         this.dateEvent = date;
         this.nomEvent = nom;
         this.heureEvent = heure;
         this.lieuEvent = lieu;
-        this.nbPersonne = nbPersonne;
+        this.nbPersonneMax = nbPersonneMax;
         this.idCreateur = createur;
     }
 
@@ -65,8 +68,8 @@ public class Evenement {
         return lieuEvent;
     }
 
-    public int getNbPersonne() {
-        return nbPersonne;
+    public int getNbPersonneMax() {
+        return nbPersonneMax;
     }
 
     public Utilisateur getIdCreateur() {
@@ -90,8 +93,8 @@ public class Evenement {
         this.lieuEvent = lieuEvent;
     }
 
-    public void setNbPersonne(int nbPersonne) {
-        this.nbPersonne = nbPersonne;
+    public void setNbPersonneMax(int nbPersonneMax) {
+        this.nbPersonneMax = nbPersonneMax;
     }
 
     public void setIdCreateur(Utilisateur idCreateur) {
