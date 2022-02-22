@@ -17,6 +17,4 @@ public class ConnexionController {
     public String adm(){
         return "validinscription";
     }
-
-
 }

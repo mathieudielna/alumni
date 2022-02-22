@@ -37,16 +37,16 @@ MCD / MLD
 
 
 ## Répartition des tâches
-| Fonction                | Attribution                                       | Fonctionnelle (oui/non)    |Règle (secondaire) |
-| :-----------------------| :-------------------------------------------------| :------------------------- |:------------------|
-| `Création utilisateur`          | [@mathieudielna](https://github.com/mathieudielna)| Oui             |                   |
-| `Connexion`                     | [@mathieudielna](https://github.com/mathieudielna)| Oui                |                   |
-| `Déconnexion`                   | [@mathieudielna](https://github.com/mathieudielna)| Oui                  |                   |
-| `Inscription`                   | [@mathieudielna](https://github.com/mathieudielna)| Oui               |                   |
-| `Création d'évènements`        | [@mathieudielna](https://github.com/mathieudielna)| En cours              |                   |
-| `Consultation d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| En cours              |                   |
-| `Modification d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| **non fait**               |                   |
-| `Recherche d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| **non fait**               |                   |
+| Fonction                | Attribution                                       | Fonctionnelle (oui/non) |Règle (secondaire) |
+| :-----------------------| :-------------------------------------------------|:------------------------|:------------------|
+| `Création utilisateur`          | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
+| `Connexion`                     | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
+| `Déconnexion`                   | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
+| `Inscription`                   | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
+| `Création d'évènements`        | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
+| `Consultation d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
+| `Modification d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| En cours                |                   |
+| `Recherche d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| **non fait**            |                   |
 
 # Méthode et contraintes
 ## Méthode

@@ -52,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/connexion").loginProcessingUrl("/connexion").failureUrl("/connexion?error=true")
                 .usernameParameter("login").passwordParameter("password").permitAll()
-                    .defaultSuccessUrl("/ajouter", true)
+                    .defaultSuccessUrl("/evenement/consultation", true)
                     .and()
                 .logout()
                 .logoutUrl("/deconnexion").logoutSuccessUrl("/connexion?logout")

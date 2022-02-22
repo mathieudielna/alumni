@@ -1,23 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Ajouter-Ã©vÃ©nement</title>
-        <link href="<c:url value="/css/form.css" />" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier-événement</title>
+    <link href="<c:url value="/css/form.css" />" rel="stylesheet">
+</head>
 </html>
 
 <body>
 <div class="wrapper fadeInDown">
     <div id="formContent">
-       <h2 class="active ">Ajouter un Ã©vÃ©nement </h2>
+        <h2 class="active ">Modifier un événement </h2>
 
-        <form:form method="POST" action="ajouter" modelAttribute="evenementForm">
+        <c:url value="/evenement/modification/${evenement.idEvent}" var="url" />
+
+        <form:form method="POST" action="${url}" modelAttribute="evenement">
+
+            <form:hidden path="idEvent" />
 
             <form:input path="dateEvent"  placeholder="Date Evenement*"/>
             <br>
@@ -35,13 +39,13 @@
             <br>
             <form:errors path="lieuEvent" cssClass="error" />
 
-            <form:input path="nbPersonne"/>
+            <form:input path="nbPersonneMax"/>
             <br>
-            <form:errors path="nbPersonne" cssClass="error" />
+            <form:errors path="nbPersonneMax" cssClass="error" />
 
             <input type="submit" class="fadeIn fourth" value="AJOUTER EVENEMENT">
 
         </form:form>
-        </div>
     </div>
+</div>
 </body>

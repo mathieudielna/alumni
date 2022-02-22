@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 
 @Controller
-/*@RequestMapping("/evenement")*/
+@RequestMapping("/evenement")
 public class AjoutEvenementController {
 
     @Autowired

@@ -15,7 +15,6 @@
 
 <body>
 
-
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <!-- Tabs Titles -->
@@ -38,13 +37,12 @@
 
         </form>
             <!--Erreur-->
-          <%--  <div class="alert alert-error">
+        <div class="alert alert-error">
                 <c:if test="${param.error}" > Login ou mot de passe invalide! </c:if>
             </div>
-
-            <div class="alert alert-error">
+        <div class="alert alert-error">
                 <c:if test="${param.logout}"> Vous avez été deconnecté! </c:if>
-            </div>--%>
+        </div>
 
     </div>
 </div>

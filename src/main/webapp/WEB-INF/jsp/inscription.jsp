@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -29,7 +29,7 @@
                 <br>
                 <form:errors path="prenom" cssClass="error" id="error" />
 
-                <form:input type="text" path="anneePromotion" placeholder="année(promotion)* jj/mm/aaaa" />
+                <form:input type="text" path="anneePromotion" placeholder="annÃ©e(promotion)* jj/mm/aaaa" />
                 <br>
                 <form:errors path="anneePromotion" cssClass="error" id="error" />
 

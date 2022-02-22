@@ -21,4 +21,9 @@ public class EvenementServiceImpl implements EvenementService{
     public Evenement trouverEvenementParNom(String nomEvenement){
         return evenementRepository.findByNomEvent(nomEvenement);
     }
+
+    @Override
+    public List<Evenement> trouverToutEvenement() {
+        return evenementRepository.findAll();
+    }
 }

@@ -68,7 +68,7 @@ public class Evenement {
         return lieuEvent;
     }
 
-    public int getNbPersonne() {
+    public int getNbPersonneMax() {
         return nbPersonneMax;
     }
 
@@ -93,7 +93,7 @@ public class Evenement {
         this.lieuEvent = lieuEvent;
     }
 
-    public void setNbPersonne(int nbPersonneMax) {
+    public void setNbPersonneMax(int nbPersonneMax) {
         this.nbPersonneMax = nbPersonneMax;
     }
 
