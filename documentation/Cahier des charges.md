@@ -45,9 +45,9 @@ MCD / MLD
 | `Inscription`                   | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
 | `Création d'évènements`        | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
 | `Consultation d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
-| `Modification d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| En cours                |                   |
-| `Recherche d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| **non fait**            |                   |
-
+| `Modification d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
+| `Recherche d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| En cour...              |                   |
+| `Recherche d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| **Non Fait**            |                   |
 # Méthode et contraintes
 ## Méthode
 
