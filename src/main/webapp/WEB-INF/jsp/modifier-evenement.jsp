@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Modifier-événement</title>
+    <title>Modifier-Ã©vÃ©nement</title>
     <link href="<c:url value="/css/form.css" />" rel="stylesheet">
 </head>
 </html>
@@ -15,7 +15,7 @@
 <body>
 <div class="wrapper fadeInDown">
     <div id="formContent">
-        <h2 class="active ">Modifier un événement </h2>
+        <h2 class="active ">Modifier un Ã©vÃ©nement </h2>
 
         <c:url value="/evenement/modification/${evenement.idEvent}" var="url" />
 
