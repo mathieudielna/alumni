@@ -28,7 +28,7 @@ public class AjoutUtilisateurController {
     }
 
    @PostMapping("/inscription")
-    public String submit(@Valid @ModelAttribute("utilisateurForm") Utilisateur utilisateur,
+    public String submitInscription(@Valid @ModelAttribute("utilisateurForm") Utilisateur utilisateur,
                          BindingResult result)
    {
        utilisateurValidator.validate(utilisateur, result);

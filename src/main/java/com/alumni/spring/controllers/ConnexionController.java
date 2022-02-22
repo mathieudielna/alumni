@@ -13,8 +13,4 @@ public class ConnexionController {
         return "connexion";
     }
 
-    @RequestMapping("/admin")
-    public String adm(){
-        return "validinscription";
-    }
 }

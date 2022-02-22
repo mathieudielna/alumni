@@ -27,7 +27,7 @@ public class AjoutEvenementController {
     @GetMapping("/ajouter")
     public String ajoutEvenement(Model model){
         model.addAttribute("evenementForm", new Evenement());
-        return "ajoutEvenement";
+        return "ajout-evenement";
     }
 
     @PostMapping("/ajouter")
@@ -37,7 +37,7 @@ public class AjoutEvenementController {
         evenementValidator.validate(evenement,result);
         if(result.hasErrors()){
             System.err.println("Erreur ajout ->" + result.getAllErrors());
-            return "ajoutEvenement";
+            return "ajout-evenement";
         }
         evenementService.ajouterEvenement(evenement);
         return "validinscription";

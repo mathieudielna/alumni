@@ -35,9 +35,9 @@
             <br>
             <form:errors path="lieuEvent" cssClass="error" />
 
-            <form:input path="nbPersonne"/>
+            <form:input path="nbPersonneMax"/>
             <br>
-            <form:errors path="nbPersonne" cssClass="error" />
+            <form:errors path="nbPersonneMax" cssClass="error" />
 
             <input type="submit" class="fadeIn fourth" value="AJOUTER EVENEMENT">
 
