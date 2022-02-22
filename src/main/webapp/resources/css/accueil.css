@@ -1,0 +1,85 @@
+html, body {
+    color: black;
+    background-color: #931B33;
+    margin: 0px;
+    height: 100%;
+}
+
+.bold {
+    font-weight: bold;
+}
+.void {
+    flex: 1;
+    background-color: initial;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+nav img {
+    max-height: 75%;
+}
+
+nav div {
+    background-color: #931B33;
+    color: white;
+    padding: 1em;
+    margin: 0 1em;
+    border-radius: 1em;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+
+}
+
+section div  {
+    width: 90%;
+    height: 80%;
+    background-color: limegreen;
+    background-image: url("https://www.centraliens-nantes.org/medias/editor/oneshot-images/20876678965e26d083df78c.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    margin: auto;
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+section div article {
+    width: 40%;
+    text-align: center;
+    margin: 5% 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0 1.5em;
+}
+
+section div article h1 {
+    color: #931B33;
+    font-size: 2em;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+    color: black;
+} 
+a:hover {
+    text-decoration: underline;
+}
