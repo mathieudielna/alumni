@@ -21,14 +21,14 @@ public class ModifierEvenementController {
     @GetMapping("modification/{evenement}")
     public String modifierEvenement(@PathVariable("evenement")Evenement evenement, Model model){
         model.addAttribute("evenement", evenement);
-        return "modifier-evenement-admin";
+        return "modifier-evenement";
     }
 
     @PostMapping("modification/{evenement}")
     public String modifierEvenementPost(@Valid @ModelAttribute("evenement")Evenement evenement, BindingResult result){
         evenementValidator.validate(evenement, result);
         if(result.hasErrors()){
-            return "modifier-evenement-admin";
+            return "modifier-evenement";
         }
         // uptdate-client
 

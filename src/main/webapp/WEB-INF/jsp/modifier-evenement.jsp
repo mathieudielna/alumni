@@ -43,7 +43,7 @@
             <br>
             <form:errors path="nbPersonneMax" cssClass="error" />
 
-            <input type="submit" class="fadeIn fourth" value="AJOUTER EVENEMENT">
+            <input type="submit" class="fadeIn fourth" value="MODIFIER EVENEMENT">
 
         </form:form>
     </div>

@@ -20,7 +20,6 @@ public class ConsulterEvenement {
     public String affichageEvenements(Model model){
         List<Evenement> evenements = evenementService.trouverToutEvenement();
         model.addAttribute("evenements", evenements);
-        System.err.println(evenements.get(0).getNomEvent());
-        return "consulter-evenement";
+        return "consulter-evenement-admin";
     }
 }
