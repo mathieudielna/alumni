@@ -1,6 +1,7 @@
 package com.alumni.spring.controllers;
 
 import com.alumni.spring.models.Evenement;
+import com.alumni.spring.service.EvenementService;
 import com.alumni.spring.validator.EvenementValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,9 @@ public class ModifierEvenementController {
     @Autowired
     private EvenementValidator evenementValidator;
 
+    @Autowired
+    private EvenementService evenementService;
+
     @GetMapping("modification/{evenement}")
     public String modifierEvenement(@PathVariable("evenement")Evenement evenement, Model model){
         model.addAttribute("evenement", evenement);
@@ -26,12 +30,12 @@ public class ModifierEvenementController {
 
     @PostMapping("modification/{evenement}")
     public String modifierEvenementPost(@Valid @ModelAttribute("evenement")Evenement evenement, BindingResult result){
-        evenementValidator.validate(evenement, result);
+        //evenementValidator.validate(evenement, result);
         if(result.hasErrors()){
             return "modifier-evenement";
         }
-        // uptdate-client
-
-        return "modifier-evenement";
+        // -client
+        evenementService.update(evenement);
+        return "validinscription";
     }
 }

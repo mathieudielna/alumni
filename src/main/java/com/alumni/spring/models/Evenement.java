@@ -1,5 +1,7 @@
 package com.alumni.spring.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -15,6 +17,7 @@ public class Evenement {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idEvent;
 
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @NotNull
     private Date dateEvent;
 

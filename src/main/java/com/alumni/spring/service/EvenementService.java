@@ -9,4 +9,5 @@ public interface EvenementService {
     void ajouterEvenement(Evenement evenement);
     Evenement trouverEvenementParNom(String nomEvenement);
     List<Evenement> trouverToutEvenement();
+    void update(Evenement evenement);
 }

@@ -21,7 +21,6 @@ public class    Utilisateur implements UserDetails {
 
     @Column(unique=true)
     @NotNull
-
     @Size(min = 2)
     private String login;
 
