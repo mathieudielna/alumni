@@ -14,6 +14,11 @@
     <body>
     <div class="wrapper fadeInDown">
         <div id="formContent">
+
+            <div class="fadeIn first">
+                <img src="https://upload.wikimedia.org/wikipedia/fr/b/b2/Universite_Paris_logo_horizontal.jpg" id="icon" alt="User Icon"/>
+            </div>
+
             <a href="/connexion"><h2 class="inactive underlineHover">Connexion </h2></a>
             <h2 class="active"> Inscription </h2>
             <form:form method="POST" action="inscription" modelAttribute="utilisateurForm">

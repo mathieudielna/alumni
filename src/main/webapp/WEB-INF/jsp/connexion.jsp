@@ -19,13 +19,14 @@
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <!-- Tabs Titles -->
+        <div class="fadeIn first">
+            <img src="https://upload.wikimedia.org/wikipedia/fr/b/b2/Universite_Paris_logo_horizontal.jpg" id="icon" alt="User Icon"/>
+        </div>
+
         <h2 class="active"> Connexion </h2>
 
         <a href="/inscription"><h2 class="inactive underlineHover">Inscription </h2></a>
-        <!-- Icon -->
-        <!-- <div class="fadeIn first">
-             <img src="" id="icon" alt="User Icon"/>
-         </div>-->
+
         <form name="loginForm" action="connexion" method="post">
 
             <input type="text" id="login" class="fadeIn second" name="login" placeholder="identifiant">
@@ -38,10 +39,10 @@
 
         </form>
             <!--Erreur-->
-        <div class="alert alert-error">
+        <div class="alert alert-error"  id="error">
                 <c:if test="${param.error}" > Login ou mot de passe invalide! </c:if>
             </div>
-        <div class="alert alert-error">
+        <div class="alert alert-error"  id="error">
                 <c:if test="${param.logout}"> Vous avez été deconnecté! </c:if>
         </div>
 

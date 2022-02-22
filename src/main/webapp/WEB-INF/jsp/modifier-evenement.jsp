@@ -15,6 +15,11 @@
 <body>
 <div class="wrapper fadeInDown">
     <div id="formContent">
+
+        <div class="fadeIn first">
+            <img src="https://upload.wikimedia.org/wikipedia/fr/b/b2/Universite_Paris_logo_horizontal.jpg" id="icon" alt="User Icon"/>
+        </div>
+
         <h2 class="active ">Modifier un événement </h2>
 
         <c:url value="/evenement/modification/${evenement.idEvent}" var="url" />
@@ -25,23 +30,23 @@
 
             <form:input path="dateEvent"  placeholder="Date Evenement*"/>
             <br>
-            <form:errors path="dateEvent" cssClass="error" />
+            <form:errors path="dateEvent" cssClass="error"  id="error"/>
 
             <form:input path="nomEvent" placeholder="Nom Evenement*"/>
             <br>
-            <form:errors path="nomEvent" cssClass="error" />
+            <form:errors path="nomEvent" cssClass="error"  id="error"/>
 
             <form:input path="heureEvent" placeholder="Heure Evenement*"/>
             <br>
-            <form:errors path="heureEvent" cssClass="error" />
+            <form:errors path="heureEvent" cssClass="error"  id="error" />
 
             <form:input path="lieuEvent" placeholder="Lieu Evenement*" />
             <br>
-            <form:errors path="lieuEvent" cssClass="error" />
+            <form:errors path="lieuEvent" cssClass="error"  id="error" />
 
             <form:input path="nbPersonneMax"/>
             <br>
-            <form:errors path="nbPersonneMax" cssClass="error" />
+            <form:errors path="nbPersonneMax" cssClass="error"  id="error"/>
 
             <input type="submit" class="fadeIn fourth" value="MODIFIER EVENEMENT">
 
