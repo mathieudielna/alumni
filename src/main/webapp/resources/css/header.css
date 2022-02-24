@@ -1,0 +1,33 @@
+html, body {
+    margin: 0px;
+    height: 100%;
+}
+
+.void {
+    flex: 1;
+    background-color: initial;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+nav img {
+    max-height: 75%;
+}
+
+nav div {
+    background-color: #931B33;
+    color: white;
+    padding: 1em;
+    margin: 0 1em;
+    border-radius: 1em;
+}

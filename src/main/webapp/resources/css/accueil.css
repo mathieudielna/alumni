@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 html, body {
     color: black;
+    font-family: "Lato", sans-serif;
     background-color: #931B33;
     margin: 0px;
     height: 100%;
@@ -8,34 +11,6 @@ html, body {
 .bold {
     font-weight: bold;
 }
-.void {
-    flex: 1;
-    background-color: initial;
-}
-
-nav {
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    height: 10%;
-    width: 100%;
-    text-align: center;
-}
-
-nav img {
-    max-height: 75%;
-}
-
-nav div {
-    background-color: #931B33;
-    color: white;
-    padding: 1em;
-    margin: 0 1em;
-    border-radius: 1em;
-}
 
 section {
     display: flex;
@@ -43,7 +18,6 @@ section {
     align-items: center;
     height: 90%;
     width: 100%;
-
 }
 
 section div  {
@@ -73,7 +47,11 @@ section div article {
 
 section div article h1 {
     color: #931B33;
-    font-size: 2em;
+    font-size: 2.5em;
+}
+
+section div article p {
+    font-size: 1.5em;
 }
 
 a:link, a:visited, a:active {

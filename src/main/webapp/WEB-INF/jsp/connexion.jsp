@@ -11,10 +11,13 @@
     <meta charset="UTF-8"/>
     <title>Connexion</title>
     <link href="<c:url value="/css/form.css" />" rel="stylesheet">
+    <link href="<c:url value='/css/header.css' />" rel="stylesheet">
 
 </head>
 
 <body>
+    
+    <jsp:include page="template/header.jsp"></jsp:include>
 
 <div class="wrapper fadeInDown">
     <div id="formContent">

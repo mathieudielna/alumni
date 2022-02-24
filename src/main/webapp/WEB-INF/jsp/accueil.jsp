@@ -11,26 +11,11 @@
     <meta charset="UTF-8" />
     <title>Accueil</title>
     <link href="<c:url value='/css/accueil.css' />" rel="stylesheet">
+    <link href="<c:url value='/css/header.css' />" rel="stylesheet">
 </head>
 
 <body>
-
-    <!-- <div>Ok Acceuil</div>
-    <div>${message}</div>
-
-<a href="${pageContext.request.contextPath}/inscription">Inscription</a>
-<a href="${pageContext.request.contextPath}/connexion">Connexion</a>
-=======
-    <a href="${pageContext.request.contextPath}/inscription">Inscription</a> -->
-
-
-    <nav>
-        <img src="https://upload.wikimedia.org/wikipedia/fr/b/b2/Universite_Paris_logo_horizontal.jpg" alt="Logo Université de Paris"/>
-        <div class="void"></div>
-        <div>Evenements</div>
-        <div>Contacts</div>
-    </nav>
-
+    <jsp:include page="template/header.jsp"></jsp:include>
     <section><div>
         <article>
             <h1>Le réseau</h1>
