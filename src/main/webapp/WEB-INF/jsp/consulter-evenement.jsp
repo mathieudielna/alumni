@@ -9,16 +9,17 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>Consulter Evenement</title>
+    <title>Evenements Alumni</title>
     <link href="<c:url value='/css/header.css' />" rel="stylesheet">
     <link href="<c:url value='/css/tableau.css' />" rel="stylesheet">
+
 </head>
 
 <body>
 <jsp:include page="template/header.jsp"></jsp:include>
 
 <div class="table-wrapper">
-    <table class="fl-table">
+<table class="fl-table">
     <thead>
     <tr>
         <th>Id</th>
@@ -26,13 +27,11 @@
         <th>Date</th>
         <th>Heure</th>
         <th>Lieu</th>
-        <th>Max personnes</th>
-        <th>Modifier</th>
+        <th>Nombres de personnes</th>
     </tr>
     </thead>
     <tbody>
     <c:forEach var="evenement" items="${evenements}">
-        <c:url value="/evenement/modification/${evenement.idEvent}" var="url" />
         <tr>
             <td>${evenement.idEvent}</td>
             <td>${evenement.nomEvent}</td>
@@ -40,12 +39,10 @@
             <td>${evenement.heureEvent}</td>
             <td>${evenement.lieuEvent}</td>
             <td>${evenement.nbPersonneMax}</td>
-            <td>
-                <p><a href="<c:url value="${url}" />">Modifier</a></p>
-            </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
+</div>
 </body>
 

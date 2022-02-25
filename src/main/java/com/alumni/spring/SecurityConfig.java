@@ -45,14 +45,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/admin**").hasAuthority("ROLE_ADMIN")
                 .antMatchers("valid").hasAuthority("ROLE_USER")
-                .antMatchers("/js/**", "/css/**","/", "/connexion",
-                        "/inscription", "/ajoutuser", "/evenement**").permitAll()
+                .antMatchers("/js/**", "/css/**","/img/**","/", "/connexion",
+                        "/inscription", "/ajoutuser", "/evenement/open-event").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/connexion").loginProcessingUrl("/connexion").failureUrl("/connexion?error=true")
                 .usernameParameter("login").passwordParameter("password").permitAll()
-                    .defaultSuccessUrl("/evenement/consultation", true)
+                    .defaultSuccessUrl("/evenement/open-event", true)
                     .and()
                 .logout()
                 .logoutUrl("/deconnexion").logoutSuccessUrl("/connexion?logout")

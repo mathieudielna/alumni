@@ -38,6 +38,11 @@ public class Application implements WebApplicationInitializer, WebMvcConfigurer
 
 		registry.addResourceHandler("/js/**")
 				.addResourceLocations("/resources/js/");
+
+		registry.addResourceHandler("/img/**")
+				.addResourceLocations("/resources/imlg/");
 	}
 
 }
+
+

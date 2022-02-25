@@ -1,0 +1,1 @@
+<div>Je vous laisse faire la page contact avec un mail de contact par exemple </div>

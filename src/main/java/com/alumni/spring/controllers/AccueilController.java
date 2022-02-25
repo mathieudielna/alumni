@@ -13,4 +13,9 @@ public class AccueilController {
         model.addAttribute("message", "Home App");
         return "accueil";
     }
+
+    @RequestMapping("/contact")
+    public String contact(){
+        return "contact";
+    }
 }

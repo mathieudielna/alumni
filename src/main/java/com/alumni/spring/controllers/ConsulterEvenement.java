@@ -17,9 +17,16 @@ public class ConsulterEvenement {
     private EvenementService evenementService;
 
     @RequestMapping("/consultation")
-    public String affichageEvenements(Model model){
+    public String affichageEvenementsAdmin(Model model){
         List<Evenement> evenements = evenementService.trouverToutEvenement();
         model.addAttribute("evenements", evenements);
         return "consulter-evenement-admin";
+    }
+
+    @RequestMapping("/open-event")
+    public String affichageEvenements(Model model){
+        List<Evenement> evenements = evenementService.trouverToutEvenement();
+        model.addAttribute("evenements", evenements);
+        return "consulter-evenement";
     }
 }

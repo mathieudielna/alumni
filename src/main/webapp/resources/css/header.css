@@ -24,10 +24,15 @@ nav img {
     max-height: 75%;
 }
 
-nav div {
+nav div a {
     background-color: #931B33;
     color: white;
     padding: 1em;
     margin: 0 1em;
     border-radius: 1em;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: white;
 }

@@ -16,7 +16,8 @@
 
 <body>
     <jsp:include page="template/header.jsp"></jsp:include>
-    <section><div>
+    <section>
+        <div>
         <article>
             <h1>Le réseau</h1>
             <p>
@@ -38,7 +39,8 @@
                 <a class="bold" href="${pageContext.request.contextPath}/inscription">Inscription</a>
             </p>
         </article>
-    </div></section>
+        </div>
+    </section>
 </body>
 
 </html>
