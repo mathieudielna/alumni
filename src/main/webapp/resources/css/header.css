@@ -26,13 +26,16 @@ nav img {
 
 nav div a {
     background-color: #931B33;
-    color: white;
     padding: 1em;
     margin: 0 1em;
     border-radius: 1em;
     text-decoration: none;
 }
 
-nav a:hover {
+nav div a:link, nav div a:visited, nav div a:active {
+    text-decoration: none;
     color: white;
+} 
+nav div a:hover {
+    text-decoration: underline;
 }
