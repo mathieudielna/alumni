@@ -47,11 +47,11 @@ section div article {
 
 section div article h1 {
     color: #931B33;
-    font-size: 2.5em;
+    font-size: 1.5em;
 }
 
 section div article p {
-    font-size: 1.5em;
+    font-size: 1.125em;
 }
 
 a:link, a:visited, a:active {
