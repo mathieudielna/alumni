@@ -12,6 +12,7 @@ import java.util.HashSet;
 
 @Service
 public class UtilisateurServiceImpl implements UtilisateurService {
+
     @Autowired
     private UtilisateurRepository utilisateurRepository;
     @Autowired
