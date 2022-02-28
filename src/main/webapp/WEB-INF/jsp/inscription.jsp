@@ -20,7 +20,7 @@
         <div id="formContent">
 
             <div class="fadeIn first">
-                <img src="<c:url value='/img/Universite_Paris_logo_horizontal.jpg' />" id="icon" alt="univ icon"/>
+                <img src="https://upload.wikimedia.org/wikipedia/fr/b/b2/Universite_Paris_logo_horizontal.jpg" id="icon" alt="univ icon"/>
             </div>
 
             <a href="/connexion"><h2 class="inactive underlineHover">Connexion </h2></a>

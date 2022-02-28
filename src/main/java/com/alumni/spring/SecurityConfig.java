@@ -39,10 +39,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/admin**").hasAuthority("ROLE_ADMIN")
-                .antMatchers("valid").hasAuthority("ROLE_USER")
+                .antMatchers("/admin**","/evenement/consultation","/evenement/modification/**").hasAuthority("ROLE_ADMIN")
+                .antMatchers("/evenement/ajouter").hasAuthority("ROLE_USER")
                 .antMatchers("/js/**", "/css/**","/img/**","/", "/connexion",
-                        "/inscription", "/ajoutuser", "/evenement/open-event").permitAll()
+                        "/inscription", "/evenement/open-event", "/contact").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

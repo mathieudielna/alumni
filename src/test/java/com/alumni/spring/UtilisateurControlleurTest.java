@@ -51,6 +51,8 @@ public class UtilisateurControlleurTest {
                         .param("password","pass")
                         .param("anneePromotion","1999/01/39"))
                 .andExpect(status().isOk())
-                .andExpect(model().hasErrors());
+                .andExpect(model().hasErrors())
+                .andExpect(model().errorCount(1));
     }
+
 }

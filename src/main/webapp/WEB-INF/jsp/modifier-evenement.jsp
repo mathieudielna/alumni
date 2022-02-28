@@ -21,7 +21,7 @@
     <div id="formContent">
 
         <div class="fadeIn first">
-            <img src="<c:url value='/img/Universite_Paris_logo_horizontal.jpg' />" id="icon" alt="univ icon"/>
+            <img src="https://upload.wikimedia.org/wikipedia/fr/b/b2/Universite_Paris_logo_horizontal.jpg" id="icon" alt="univ icon"/>
         </div>
 
         <h2 class="active ">Modifier un événement </h2>

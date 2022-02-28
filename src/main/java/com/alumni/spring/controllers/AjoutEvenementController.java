@@ -32,15 +32,15 @@ public class AjoutEvenementController {
 
     @PostMapping("/ajouter")
     public String submitEvenement(@Valid @ModelAttribute("evenementForm") Evenement evenement,
-                                  BindingResult result){
-        //evenement.setIdCreateur();
+                                  BindingResult result)
+    {
         evenementValidator.validate(evenement,result);
         if(result.hasErrors()){
             System.err.println("Erreur ajout ->" + result.getAllErrors());
             return "ajout-evenement";
         }
         evenementService.ajouterEvenement(evenement);
-        return "validinscription";
+        return "redirect:/evenement/open-event";
 
 
     }

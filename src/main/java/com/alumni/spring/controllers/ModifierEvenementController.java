@@ -28,12 +28,12 @@ public class ModifierEvenementController {
 
     @PostMapping("modification/{evenement}")
     public String modifierEvenementPost(@Valid @ModelAttribute("evenement")Evenement evenement, BindingResult result){
-        //evenementValidator.validate(evenement, result);
+        evenementValidator.validate(evenement, result);
         if(result.hasErrors()){
             return "modifier-evenement";
         }
         // -client
         evenementService.update(evenement);
-        return "validinscription";
+        return "redirect:/evenement/consultation";
     }
 }
