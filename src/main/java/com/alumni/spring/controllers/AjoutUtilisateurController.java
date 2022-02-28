@@ -36,7 +36,7 @@ public class AjoutUtilisateurController {
        }
        utilisateurService.ajouterUtilisateur(utilisateur);
        //securityService.autoLogin(utilisateur.getUsername(),utilisateur.getPassword());
-       return "validinscription";
+       return "redirect:/connexion";
    }
 
     @GetMapping("/valid")

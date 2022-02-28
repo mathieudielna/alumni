@@ -10,8 +10,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -38,8 +37,9 @@ public class UtilisateurControlleurTest {
                         .param("prenom","testing")
                         .param("password","pass")
                         .param("anneePromotion","01/01/1999"))
-                .andExpect(status().isOk())
-                .andExpect(model().hasNoErrors());
+                .andExpect(status().isFound())
+                .andExpect(model().hasNoErrors())
+                .andExpect(redirectedUrl("/connexion"));
     }
 
     @Test
