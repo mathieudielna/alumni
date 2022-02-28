@@ -61,6 +61,7 @@ public class EvenementControlleurTest {
                         .param("nomEvent","")
                         .param("dateEvent","01/03/1999"))
                 .andExpect(status().isOk())
-                .andExpect(model().hasErrors());
+                .andExpect(model().hasErrors())
+                .andExpect(view().name("ajout-evenement"));
     }
 }

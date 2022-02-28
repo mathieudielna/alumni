@@ -52,7 +52,8 @@ public class UtilisateurControlleurTest {
                         .param("anneePromotion","1999/01/39"))
                 .andExpect(status().isOk())
                 .andExpect(model().hasErrors())
-                .andExpect(model().errorCount(1));
+                .andExpect(model().errorCount(1))
+                .andExpect(view().name("inscription"));
     }
 
 }
