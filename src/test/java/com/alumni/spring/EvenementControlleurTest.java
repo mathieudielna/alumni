@@ -31,10 +31,11 @@ public class EvenementControlleurTest {
 
     @Test
     @WithMockUser("test")
-    public void testAuthentificatedPage_success() throws Exception{
+    public void testAuthentificatedAjouterEvenement_success() throws Exception{
         mockMvc.perform(get("/evenement/ajouter"))
                 .andExpect(status().isOk());
     }
+
 
     @Test
     @WithMockUser("test")
@@ -48,5 +49,18 @@ public class EvenementControlleurTest {
                 .andExpect(status().isFound())
                 .andExpect(model().hasNoErrors())
                 .andExpect(redirectedUrl("/evenement/open-event"));
+    }
+
+    @Test
+    @WithMockUser("test")
+    public void testPostEvenement_error() throws Exception {
+        mockMvc.perform(post("/evenement/ajouter")
+                        .param("nbPersonneMax","70")
+                        .param("lieuEvent","test_lieu")
+                        .param("heureEvent","02:01:01")
+                        .param("nomEvent","")
+                        .param("dateEvent","01/03/1999"))
+                .andExpect(status().isOk())
+                .andExpect(model().hasErrors());
     }
 }
