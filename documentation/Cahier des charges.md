@@ -17,7 +17,7 @@
 
 - [Tests](#paragraphe5)
 
-- [Patterns de programmation](#paragraphe6)
+- [Patterns de programmation](#pattern-de-programmation)
 
 - [Conclusion](#conclusion)
 
@@ -89,6 +89,29 @@ Le projet est à livrer le 14 mars 2022
 - Framework: spring Vue.js 
 - Outils diverses : documentation, internet
 - Patterns de programmation : MVC
+# Tests
+
+
+# Pattern de programmation
+
+L'infrastructure choisi pour cette application est le pattern de programmation MVC ( modèle vue controleur)
+L'infrastruction se divise en plusieurs fichiers : 
+- le repository qui  gère la liaison entre l'application et la Base de donnée. Pour chacun des objets, nous avons un repository.
+- le modèle : qui represente les objets 
+- le service qui permet la connexion entre le repository et le controleur 
+- le controleur qui gère les affichages et les différentes liaisons : les données envoyées aux vues par le biais du service,les données que l'on va insérer dans le repository par le biais du service mais aussi par le biais du validator. lorsque l'on va soumettre un formulaire, le controleur va le soumettre au validator, si le validator indique que les conditions sont bonnes alors le code continue de s'exécuter et on est envoyé au service qui va traiter la demande et ensuite l'enregistrer dans le repository. En cas d'erreur, on a un dossier ressource qui contient en même temps, les propriétés de l'application ( type chemin pour trouver les vues etc.) et les messages d'erreur
+
+Dans un autre dossier, nous avons le web-app qui contient plusieurs fichiers : 
+-    le web-inf qui contient toutes les pages jsp 
+-    Ressources : où il y a le CSS, JS etc.
+-    Test afin de tester les fonctions de l'application 
+-    le  target où il y a tous les fichier en .class, ce sont des exécutables 
+
+- on a aussi un fichier pom.xml pour gérer toutes les dépendances de l'application ainsi que dans le fichier maven. 
+- Application avec tous les réglages de bases 
+- et enfin nous avons le securityconfig qui gère les sessions, les accès aux pages, les endroits pour la connexion etc. 
+
+Chaque fichier ou dossier à sa propre fontionnalité, nous avons choisi ce type d'infrastructure afin de faciliter les modifcations avenirs, la compréhension et le retraitement en cas de suppression ou modification d'une fonctionnalité. 
 
 # Conclusion 
 - Problèmes rencontrés , solutions trouvées 
