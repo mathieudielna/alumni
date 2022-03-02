@@ -33,19 +33,18 @@ public class Evenement {
     @NotNull
     private int nbPersonneMax;
 
-    @ManyToOne
+/*    @ManyToOne
     @JoinColumn(name = "id")
-    private Utilisateur idCreateur;
+    private Utilisateur idCreateur;*/
 
     public Evenement(){}
 
-    public Evenement(Date date, String nom, Time heure, String lieu, int nbPersonneMax, Utilisateur createur){
+    public Evenement(Date date, String nom, Time heure, String lieu, int nbPersonneMax){
         this.dateEvent = date;
         this.nomEvent = nom;
         this.heureEvent = heure;
         this.lieuEvent = lieu;
         this.nbPersonneMax = nbPersonneMax;
-        this.idCreateur = createur;
     }
 
     // getter
@@ -73,9 +72,9 @@ public class Evenement {
         return nbPersonneMax;
     }
 
-    public Utilisateur getIdCreateur() {
+    /*public Utilisateur getIdCreateur() {
         return idCreateur;
-    }
+    }*/
 
     // setter
     public void setDateEvent(Date dateEvent) {
@@ -98,7 +97,7 @@ public class Evenement {
         this.nbPersonneMax = nbPersonneMax;
     }
 
-    public void setIdCreateur(Utilisateur idCreateur) {
+   /* public void setIdCreateur(Utilisateur idCreateur) {
         this.idCreateur = idCreateur;
-    }
+    }*/
 }

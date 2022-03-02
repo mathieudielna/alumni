@@ -39,6 +39,7 @@ public class AjoutEvenementController {
             System.err.println("Erreur ajout ->" + result.getAllErrors());
             return "ajout-evenement";
         }
+        System.err.println(evenement.getHeureEvent());
         evenementService.ajouterEvenement(evenement);
         return "redirect:/evenement/open-event";
 

@@ -13,6 +13,6 @@ import java.util.List;
 @Repository
 public interface EvenementRepository extends JpaRepository<Evenement, Long> {
     Evenement findByNomEvent(String nomEvent);
-    List<Evenement> findByDateEvent(Date Date);
+    Evenement findEvenementByIdEvent(Long idEvent);
 
 }
