@@ -2,7 +2,8 @@ package com.alumni.spring.controllers;
 
 import com.alumni.spring.models.Evenement;
 import com.alumni.spring.service.EvenementService;
-import com.alumni.spring.validator.EvenementValidator;
+import com.alumni.spring.validator.AjoutEvenementValidator;
+import com.alumni.spring.validator.ModifEvenementValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +16,7 @@ import javax.validation.Valid;
 public class ModifierEvenementController {
 
     @Autowired
-    private EvenementValidator evenementValidator;
+    private ModifEvenementValidator evenementValidator;
 
     @Autowired
     private EvenementService evenementService;

@@ -9,7 +9,7 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 @Component
-public class EvenementValidator implements Validator {
+public class ModifEvenementValidator implements Validator {
 
     @Autowired
     private EvenementService evenementService;
@@ -27,10 +27,6 @@ public class EvenementValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors,"nomEvent", "NotEmpty");
         if(evenement.getNomEvent().length() < 2 || evenement.getNomEvent().length() > 32) {
             errors.rejectValue("nomEvent", "Size.evenementForm.nomEvent");
-        }
-
-        if(evenementService.trouverEvenementParNom(evenement.getNomEvent()) != null){
-            errors.rejectValue("nomEvent", "Duplicate.evenementForm.nomEvent");
         }
     }
 }
