@@ -46,8 +46,8 @@ MCD / MLD
 | `Création d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
 | `Consultation d'évènements` | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
 | `Modification d'évènements` | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
-| `Recherche d'évènements`    | [@mathieudielna](https://github.com/mathieudielna)| **Non Fait**              |                   |
-| `Jeux de Test`              | [@mathieudielna](https://github.com/mathieudielna)| En cour...              |                   |
+| `Recherche d'évènements`    | [@mathieudielna](https://github.com/mathieudielna)| **Non Fait**            |                   |
+| `Jeux de Test`              | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
 # Méthode et contraintes
 ## Méthode
 
@@ -86,7 +86,7 @@ Le projet est à livrer le 14 mars 2022
 - Langage de programmation : java,   
 - Gestion des dépendances :  maven
 - Outils de programmation : débuggueur
-- Framework: spring Vue.js 
+- Framework: spring
 - Outils diverses : documentation, internet
 - Patterns de programmation : MVC
 # Tests
