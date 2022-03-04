@@ -32,3 +32,5 @@
     6.1. Soit ajouter le role via base de donnée via la table ```utilisateur_role```
     
     6.2 Soit dans le ```service/UtilisateurServiceImpl``` decommenter la ligne de la fonction ```ajouterUtilisateur```
+
+⚡️ Application prête à l'emplois
