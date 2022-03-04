@@ -13,10 +13,6 @@
 
 - L’IUT Paris Descartes a décidé de monter un réseau alumni avec ses anciennes promos, élèves / professeurs. Afin de maintenir le contact et d’organiser des événements / rencontres universitaires avec ceux-ci sous forme de réseau social. 
 
-### Project Title
-
-Afin d'executer l'application 
-
 ![Logo](https://iutparis-seine.u-paris.fr/wp-content/uploads/sites/3/2020/12/UniversiteParis_IUTParis-RdS.jpg)
 
 ## Running Application
