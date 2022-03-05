@@ -26,28 +26,40 @@
 
 # Cadrage & périmètre
 
-L’IUT Paris Descartes a décidé de monter un réseau alumni avec ses anciennes promos, élèves / professeurs. Afin de maintenir le contact et d’organiser des événements / rencontres universitaires avec ceux-ci sous forme de réseau social. 
+L’IUT Paris Descartes a décidé de monter un réseau alumni avec ses anciennes promos, élèves et professeurs. Afin de maintenir le contact et d’organiser des événements et rencontres universitaires avec ceux-ci sous forme de réseau social. Nous avons choisi ce sujet car nous avons aimé cette idée et nous trouvons ce projet particulièrement intéressant et potentiellement utile à l'avenir.  
 
 # Expression fonctionnelle du besoin
+
 ## Modélisation conceptuelle et logique des données 
-MCD / MLD 
-(image)
+Afin de schématiser nos données et leurs liens entre elles, nous avons choisi de les représenter sous forme de MCD/MLD.  
+#### Modèle conceptuel des données 
+![](https://github.com/mathieudielna/alumni/blob/master/documentation/mcd%20(1).png)
+
+#### Modèle logique des données  
+![](https://github.com/mathieudielna/alumni/blob/master/documentation/mld%20(1).png)
 
 
 
 
 ## Répartition des tâches
+
+#### Fonctionnalité 
 | Fonction                    | Attribution                                       | Fonctionnelle (oui/non) |Règle (secondaire) |
 |:----------------------------| :-------------------------------------------------|:------------------------|:------------------|
 | `Création utilisateur`      | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
-| `Connexion`                 | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
-| `Déconnexion`               | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
-| `Inscription`               | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
+| `Connexion`                 | [@auroreLeclerc](https://github.com/auroreLeclerc)| Oui                     |                   |
+| `Déconnexion`               | [@Lucas Juillard](https://github.com/Backqu)       | Oui                     |                   |
+| `Inscription`               | [@auroreLeclerc](https://github.com/auroreLeclerc)| Oui                     |                   |
 | `Création d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
 | `Consultation d'évènements` | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
 | `Modification d'évènements` | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
-| `Recherche d'évènements`    | [@mathieudielna](https://github.com/mathieudielna)| **Non Fait**            |                   |
+| `Recherche d'évènements`    | [@Lucas Juillard](https://github.com/Backqu)       | Oui                     |                   |
 | `Jeux de Test`              | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
+
+#### Rédaction
+
+En tant que maître d'ouvrage, nous avons suivi le projet tout au long de sa confection et avons accompagné nos développeurs dans le design, la chartre graphique mais aussi les fonctionnalités de l'application. 
+
 # Méthode et contraintes
 ## Méthode
 
@@ -58,6 +70,7 @@ Nous avons choisi d’utiliser la méthode Kanban pour ce projet. En effet, cett
 >Cette méthode exige que chaque étape soit achevée avant qu’il ne soit possible de se consacrer à une nouvelle. 
 
 Pour mettre en place cette méthode nous avons choisi l’outil Trello. 
+En effet, sur trelo, nous pouvons faires des stories mais également voir ce qui à déjà été fait ou à déjà été affecté à quelqu'un. 
 ![](https://github.com/mathieudielna/alumni/blob/master/documentation/Trello.PNG)
 
 ## Contraintes
@@ -67,7 +80,7 @@ Les contraintes liées aux projets sont nombreuses. Pour cela, nous pouvons les 
 - Langage de programmation : Java, Spring
 # Délais et parties prenantes
 ## Délais 
-Le projet est à livrer le 14 mars 2022
+Le projet est à livrer le 7 mars 2022
 ## Parties prenantes 
 | Personnes                | Fonction                                        
 | :----------------------- | :---------------|
@@ -91,6 +104,17 @@ Le projet est à livrer le 14 mars 2022
 - Patterns de programmation : MVC
 # Tests
 
+Les tests permettent de valider qu'une fonctionnalité qui a été développée est opérationnelle. Pour cela, nous avons effectué différents tests unitaires (test sur les accès , les différentes fonctionnalités). Nous nous sommes servis de MockMVC avec le Spring test et nous avons simulé l'environnement de notre application :
+##### Test sur les évènements : 
+- Test GetEvenement_succes : accès à cette page avec succès 
+- Test testauthentificationAjouterevenment_success() : authentification avec succès
+- Test tesPostEvenement_sucess : post avec des données réelles en vérifiant qu'il n'y a pas d'erreur, on peut également tester ces champs avec des erreurs en espérant qu'il détecte l'erreur --> TestPostevenement_error 
+
+Notre application est composée d'une base donnée, alors nous avons testé nos repositories également ainsi que les fonctions qui le composent comme la création d'un évènement, l'enregistrement ou la recherche d'un évènement, 
+
+vérification sur le rôle que le findRoleByName soit bon, qu'il détecte bien les erreurs.
+
+Les tests sont assez répétitifs pour les autres entités telles que les utilisateurs etc. 
 
 # Pattern de programmation
 
