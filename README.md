@@ -17,9 +17,9 @@
 
 ## Running Application
 
-1. Configurer le fichier  ``` application.properties``` avec votre configuration de base de donnée
+1. Configurer le fichier  ``` application.properties``` avec votre configuration de base de données
 
-2. Executer le script de base de donnée ```ressources/db/create-db.sql``` dans votre système de base de donnée (ici script mysql)
+2. Executer le script de base de données ```ressources/db/create-db.sql``` dans votre système de base de donnée (ici script mysql)
 
 3. Run 
 ```bash
@@ -29,8 +29,8 @@
 5. Run votre application et inscrire votre premier utilisateur ```localhost:(port)/inscription```
 6. Ajouter le role admin à votre utilisateur 
     
-    6.1. Soit ajouter le role via base de donnée via la table ```utilisateur_role```
+    6.1. Soit ajouter le role via base de données via la table ```utilisateur_role```
     
     6.2 Soit dans le ```service/UtilisateurServiceImpl``` decommenter la ligne de la fonction ```ajouterUtilisateur```
 
-⚡️ Application prête à l'emplois
+⚡️ Application prête à l'emploi
