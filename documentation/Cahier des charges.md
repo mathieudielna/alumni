@@ -51,9 +51,9 @@ Afin de schématiser nos données et leurs liens entre elles, nous avons choisi 
 | `Inscription`               | [@auroreLeclerc](https://github.com/auroreLeclerc)| Oui                     |                   |
 | `Création d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
 | `Consultation d'évènements` | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
-| `Modification d'évènements` | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
-| `Recherche d'évènements`    | [@Lucas Juillard](https://github.com/Backqu)       | Non                    |                   |
-| `Supression évènements`    | [@mathieudielna](https://github.com/mathieudielna)  | Oui                    |                   | 
+| `Modification d'évènements` | [@Lucas Juillard](https://github.com/mathieudielna)| Oui                     |                   |
+| `Recherche d'évènements`    | [@mathieudielna](https://github.com/Backqu)       | Non                    |                   |
+| `Supression évènements`    | [@Lucas Juillard](https://github.com/mathieudielna)  | Oui                    |                   | 
 
 
 #### Rédaction
