@@ -70,7 +70,7 @@ Nous avons choisi d’utiliser la méthode Kanban pour ce projet. En effet, cett
 >Cette méthode exige que chaque étape soit achevée avant qu’il ne soit possible de se consacrer à une nouvelle. 
 
 Pour mettre en place cette méthode nous avons choisi l’outil Trello. 
-En effet, sur trello, nous pouvons faire des user stories mais également voir ce qui à déjà été fait ou à déjà été affecté à quelqu'un. Cette méthode d'organisation nous a permis de voir l'avancée du projet chaque semaine et d'adapter la quantité de tâches en cas dépassement de délai sur le développement d'une focntionnalité par exemple.
+En effet sur Trello, nous pouvons faire des user stories mais également voir ce qui a déjà été fait ou déjà été affecté à quelqu'un. Cette méthode d'organisation nous a permis de voir l'avancée du projet chaque semaine et d'adapter la quantité de tâches en cas dépassement de délai sur le développement d'une fonctionnalité par exemple.
 
 ![](https://github.com/mathieudielna/alumni/blob/master/documentation/Trello.PNG)
 
