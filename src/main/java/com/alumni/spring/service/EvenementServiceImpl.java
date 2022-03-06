@@ -40,4 +40,9 @@ public class EvenementServiceImpl implements EvenementService{
         evenementAjour.setNbPersonneMax(evenement.getNbPersonneMax());
         evenementRepository.save(evenementAjour);
     }
+
+    @Override
+    public void supprimerEvenement(Evenement evenement) {
+        evenementRepository.delete(evenement);
+    }
 }

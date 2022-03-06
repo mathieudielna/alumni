@@ -28,11 +28,13 @@
         <th>Lieu</th>
         <th>Max personnes</th>
         <th>Modifier</th>
+        <th>Supprimer</th>
     </tr>
     </thead>
     <tbody>
     <c:forEach var="evenement" items="${evenements}">
         <c:url value="/evenement/modification/${evenement.idEvent}" var="url" />
+        <c:url value="/evenement/supprimer/${evenement.idEvent}" var="url2" />
         <tr>
             <td>${evenement.idEvent}</td>
             <td>${evenement.nomEvent}</td>
@@ -43,9 +45,13 @@
             <td>
                 <p><a href="<c:url value="${url}" />">Modifier</a></p>
             </td>
+            <td>
+                <p><a href="<c:url value="${url2}" />">Supprimer</a></p>
+            </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
+
 </body>
 

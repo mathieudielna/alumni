@@ -11,13 +11,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.transaction.Transactional;
 import java.sql.Time;
 import java.util.Date;
+import java.util.List;
 
 
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
-@Transactional
+/*@Transactional*/
 public class EvenementJpaTest {
 
     @Autowired
@@ -51,5 +52,18 @@ public class EvenementJpaTest {
 
         assertNotNull(evenementTrouver);
         assertEquals("test-event",evenementTrouver.getNomEvent());
+    }
+
+    @Test
+    public void deleteEventTest_success()
+    {
+        Date date = new Date();
+        long now = System.currentTimeMillis();
+        Time sqlTime = new Time(now);
+        Evenement evenementGenerer =
+                evenementRepository.save(new Evenement(date,"test-event",sqlTime,"test-event-lieu",90));
+       evenementRepository.delete(evenementGenerer);
+
+       assertNull(evenementRepository.findEvenementByIdEvent(evenementGenerer.getIdEvent()));
     }
 }

@@ -10,4 +10,5 @@ public interface EvenementService {
     Evenement trouverEvenementParNom(String nomEvenement);
     List<Evenement> trouverToutEvenement();
     void update(Evenement evenement);
+    void supprimerEvenement(Evenement evenement);
 }
