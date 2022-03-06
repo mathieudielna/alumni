@@ -9,7 +9,7 @@
   - [Répartition des tâches](#répartition-des-tâches)
 
 - [Méthodes et contraintes ](#méthode-et-contraintes) 
-  -[Méthode](#méthode)
+  - [Méthode](#méthode)
 - [Délais et parties prenantes ](#délais-et-parties-prenantes) 
    - [Délais](#délais)
    - [Parties prenantes](#parties-prenantes)
@@ -53,8 +53,8 @@ Afin de schématiser nos données et leurs liens entre elles, nous avons choisi 
 | `Création d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
 | `Consultation d'évènements` | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
 | `Modification d'évènements` | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
-| `Recherche d'évènements`    | [@Lucas Juillard](https://github.com/Backqu)       | Oui                     |                   |
-| `Jeux de Test`              | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
+| `Recherche d'évènements`    | [@Lucas Juillard](https://github.com/Backqu)       | Non                    |                   |
+
 
 #### Rédaction
 
@@ -77,7 +77,7 @@ En effet, sur trello, nous pouvons faire des user stories mais également voir c
 ## Contraintes
 Les contraintes liées aux projets sont nombreuses. Pour cela, nous pouvons les classer en catégorie.  
 - Outils rédactionnels & organisationnels  : utilisation de Markdown, Trello et Git 
-- Outils de Base de données : MySQL
+- Outils de gestion des données : MySQL
 - Langage de programmation : Java, Spring
 # Délais et parties prenantes
 ## Délais 
