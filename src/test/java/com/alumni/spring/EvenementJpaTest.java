@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
-/*@Transactional*/
+@Transactional
 public class EvenementJpaTest {
 
     @Autowired
