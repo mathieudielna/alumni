@@ -1,4 +1,3 @@
-
 # Sommaire 
 
 - [Cadrage & périmètre](#cadrage--périmètre) 
@@ -15,9 +14,9 @@
    - [Parties prenantes](#parties-prenantes)
 - [Outils](#outils)
 
-- [Tests](#paragraphe5)
+- [Tests](#tests)
 
-- [Patterns de programmation](#pattern-de-programmation)
+- [Pattern de programmation](#pattern-de-programmation)
 
 - [Conclusion](#conclusion)
 
@@ -52,8 +51,9 @@ Afin de schématiser nos données et leurs liens entre elles, nous avons choisi 
 | `Inscription`               | [@auroreLeclerc](https://github.com/auroreLeclerc)| Oui                     |                   |
 | `Création d'évènements`     | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
 | `Consultation d'évènements` | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
-| `Modification d'évènements` | [@mathieudielna](https://github.com/mathieudielna)| Oui                     |                   |
-| `Recherche d'évènements`    | [@Lucas Juillard](https://github.com/Backqu)       | Non                    |                   |
+| `Modification d'évènements` | [@Lucas Juillard](https://github.com/mathieudielna)| Oui                     |                   |
+| `Recherche d'évènements`    | [@mathieudielna](https://github.com/Backqu)       | Non                    |                   |
+| `Supression évènements`    | [@Lucas Juillard](https://github.com/mathieudielna)  | Oui                    |                   | 
 
 
 #### Rédaction
@@ -70,7 +70,7 @@ Nous avons choisi d’utiliser la méthode Kanban pour ce projet. En effet, cett
 >Cette méthode exige que chaque étape soit achevée avant qu’il ne soit possible de se consacrer à une nouvelle. 
 
 Pour mettre en place cette méthode nous avons choisi l’outil Trello. 
-En effet, sur trello, nous pouvons faire des user stories mais également voir ce qui à déjà été fait ou à déjà été affecté à quelqu'un. Cette méthode d'organisation nous a permis de voir l'avancée du projet chaque semaine et d'adapter la quantité de tâches en cas dépassement de délai sur le développement d'une focntionnalité par exemple.
+En effet, sur Trello, nous pouvons faire des user stories mais également voir ce qui a déjà été fait ou a déjà été affecté à quelqu'un. Cette méthode d'organisation nous a permis de voir l'avancer du projet chaque semaine et d'adapter la quantité de tâches en cas dépassement de délai sur le développement d'une fonctionnalité par exemple.
 
 ![](https://github.com/mathieudielna/alumni/blob/master/documentation/Trello.PNG)
 
@@ -105,13 +105,13 @@ Le projet est à livrer le 7 mars 2022.
 - Patterns de programmation : MVC
 # Tests
 
-Les tests permettent de valider qu'une fonctionnalité qui a été développée est opérationnelle. Pour cela, nous avons effectué différents tests unitaires (test sur les accès , les différentes fonctionnalités). Nous nous sommes servis de MockMVC avec le Spring test et nous avons simulé l'environnement de notre application :
+Les tests permettent de valider qu'une fonctionnalité qui a été développée est opérationnelle. Pour cela, nous avons effectué différents tests unitaires (test sur les accès, les différentes fonctionnalités). Nous nous sommes servis de MockMVC avec le Spring test et nous avons simulé l'environnement de notre application :
 ##### Test sur les évènements : 
 - Test GetEvenement_succes : accès à cette page avec succès 
 - Test testauthentificationAjouterevenment_success() : authentification avec succès
 - Test tesPostEvenement_sucess : post avec des données réelles en vérifiant qu'il n'y a pas d'erreur, on peut également tester ces champs avec des erreurs en espérant qu'il détecte l'erreur --> TestPostevenement_error 
 
-Notre application est composée d'une base de données, alors nous avons testé nos repositories également ainsi que les fonctions qui le composent comme la création d'un évènement, l'enregistrement ou la recherche d'un évènement,vérification sur le rôle que le findRoleByName soit bon, qu'il détecte bien les erreurs.
+Notre application est composée d'une base de données, alors nous avons testé nos repositories également ainsi que les fonctions qui le composent comme la création d'un évènement, l'enregistrement ou la recherche d'un évènement, vérification sur le rôle que le findRoleByName soit bon, qu'il détecte bien les erreurs.
 
 Les tests sont assez répétitifs pour les autres entités telles que les utilisateurs, etc...
 
@@ -137,17 +137,20 @@ Dans un autre dossier, nous avons le web-app qui contient plusieurs fichiers :
 Chaque fichier ou dossier a sa propre fontionnalité, nous avons choisi ce type d'infrastructure afin de faciliter les modifcations avenirs, la compréhension et le retraitement en cas de suppression ou modification d'une fonctionnalité. 
 
 # Conclusion 
-- Problèmes rencontrés , solutions trouvées 
-- Points perfectibles 
-- Reste à faire 
-- Points non solutionnés 
-- retours personnels sur le module :
-Ce projet nous a permis de montrer nos compétences mais aussi d'apprendre de nouvelles notions. 
-Grâce au module, nous avons pu apprendre à mieux travailler en équipe via github. 
 
-Ce projet nous a permis de mettre en place les notions théoriques à la pratique. En effet, l'utilisation du Git étant assez flou pour la plupart des membres de l'équipe a permis de mieux comprendre le fonctioennement et l'utilisation de Git. Il en est de même pour la rédaction de la documentation du projet en Markdown qui a été une nouveauté pour les maitres d'ouvrages. 
 
-Il est toujours difficile de réaliser un travail en groupe mais nous avons pu avancer ensemble sur la réalisation de ce projet tout en respectant les méthodes d'organisation que nous avons mise en place au début du projet et nous avons atteint toutes les objectifs principaux au niveau des fonctionnalités. 
+#### Problèmes rencontrés 
+Nous avons eu quelques difficultés au niveau de la liaison avec la base de données c'est-à-dire dans l'association de tout l'environnement qui l'entoure. 
+L'équipe des développeurs a eu un souci d'organisation au début. Des problèmes ont été également ressentis au niveau de la conception du projet.
+Nous avons eu un temps d'adaptation au niveau du framework Spring, puisque nous l'avions pas souvent utilisé. 
+
+#### Solution trouvées  
+Malgré certains problèmes rencontrés, nous avons su faire ça, notre équipe de développeurs ont compris l'importance de communiquer via l'outil Trello. Nous avons choisi de bien organiser le code afin d'avoir un code de qualité. En effet, nous avons choisi le pattern de programmation MVC ( modèle vue contrôleur) afin de faire un code de qualité avec le moins de maintenance possible en cas de suppression ou rajout de fonctionnalité. Nous n'avons pas eu le temps de faire un header dynamique, afin de passer de page en page, mais nous avons choisi de privilégier une application fonctionnelle. En effet, nous avons consacré plus de temps sur l'implémentation de la base de données car nous avons jugé cela plus important. 
+#### Retour personnel sur module 
+
+Ce projet nous a permis de montrer nos compétences,de mettre en place les notions théoriques apprises à la pratique mais aussi d'apprendre de nouveaux outils.Grâce au module, nous avons pu apprendre à mieux travailler en équipe via github. En effet, l'utilisation du Git étant assez floue pour la plupart des membres de l'équipe, ce projet a permis de mieux comprendre le fonctionnement et l'utilisation de Git. Il en est de même pour la rédaction de la documentation du projet en Markdown qui a été une nouveauté pour les maitres d'ouvrages.   
+
+Il est toujours difficile de réaliser un travail en groupe mais nous avons pu avancer ensemble sur la réalisation de ce projet tout en respectant les méthodes d'organisation que nous avons mise en place dès le début du projet et nous avons atteint tous les objectifs principaux au niveau des fonctionnalités principales que nous avions fixés. 
 
 # Bibliographie 
 - [Github](https://github.com/mathieudielna/alumni)
@@ -157,5 +160,6 @@ Il est toujours difficile de réaliser un travail en groupe mais nous avons pu a
 - [Cours de Génie Logiciel](l3miage.fr)
 - [Aide Markdown](https://github.com/InseeFrLab/utilitR/blob/master/03_Fiches_thematiques/Fiche_rmarkdown.Rmd)
 - [Editeur Markdown](readme.so)
+
 
 
